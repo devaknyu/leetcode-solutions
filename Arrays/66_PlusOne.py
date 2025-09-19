@@ -1,3 +1,23 @@
+"""
+LeetCode 66: Plus One
+https://leetcode.com/problems/plus-one/
+
+Problem:
+You are given a large integer represented as an integer array `digits`, 
+where each `digits[i]` is the ith digit of the integer. 
+Increment the large integer by one and return the resulting array of digits.
+
+Approach:
+- Traverse digits from right to left.
+- If current digit + 1 != 10 → just increment and return.
+- If current digit + 1 == 10 → set digit to 0 and continue.
+- If we finish the loop with carry (like 999 → 1000), prepend 1 at the front.
+
+Time Complexity: O(n)   (single pass through digits)
+Space Complexity: O(1)  (in-place, ignoring output array)
+"""
+
+
 from typing import List
 
 class Solution:
