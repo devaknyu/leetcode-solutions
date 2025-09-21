@@ -1,3 +1,29 @@
+"""
+LeetCode 88: Merge Sorted Array
+https://leetcode.com/problems/merge-sorted-array/
+
+Problem:
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, 
+and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Merge nums2 into nums1 as one sorted array. The final array should be sorted in non-decreasing order.
+
+Note:
+- nums1 has a length of m + n, with the first m elements initialized, and the rest set to 0.
+- The merge should be done in-place without returning a new array.
+
+Approach:
+- Use three pointers:
+    - m_idx → last valid element in nums1
+    - n_idx → last element in nums2
+    - right → last index in nums1
+- Compare elements from the back and place the larger one at `right`.
+- Continue until nums2 is exhausted (if nums1 is exhausted, just copy remaining nums2).
+
+Time Complexity: O(m + n)   (single pass through both arrays)
+Space Complexity: O(1)      (in-place)
+"""
+
+
 from typing import List
 
 class Solution:
