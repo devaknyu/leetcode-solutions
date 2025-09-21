@@ -16,3 +16,9 @@ class Solution:
             right -= 1
 
         return nums1  # for local testing (LeetCode ignores return)
+
+# Example run for local testing
+if __name__ == "__main__":
+    arr1 = [1,2,3,0,0,0]
+    arr2 = [2,5,6]
+    print(Solution().merge(arr1, 3, arr2, 3))  # Output: [1,2,2,3,5,6]
