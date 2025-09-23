@@ -9,3 +9,8 @@ class Solution:
                     return res
             res += strs[0][i]
         return res
+    
+    # Example run for local testing
+if __name__ == "__main__":
+    print(Solution().longestCommonPrefix(["flower","flow","flight"]))  # Output: "fl"
+    print(Solution().longestCommonPrefix(["dog","racecar","car"]))      # Output: ""
