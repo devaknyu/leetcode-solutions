@@ -1,3 +1,4 @@
+
 from typing import List
 
 class Solution:
@@ -11,3 +12,8 @@ class Solution:
                 row.append(temp[j] + temp[j+1])
             res.append(row)
         return res
+    
+    # Example run for local testing
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.generate(5))  # Expected [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
