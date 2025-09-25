@@ -1,3 +1,28 @@
+"""
+LeetCode 119: Pascal's Triangle II
+https://leetcode.com/problems/pascals-triangle-ii/
+
+Problem:
+Given an integer rowIndex, return the rowIndex-th (0-indexed) row of Pascal's triangle.
+
+Example:
+Input: rowIndex = 3
+Output: [1,3,3,1]
+
+Approach:
+- Start with the first row: [1].
+- For each new row up to rowIndex:
+    - Create a next_row with length len(res) + 1, initialized with 0s.
+    - Add each element of the current row to its corresponding position and the next position in next_row.
+    - Assign next_row to res.
+- Return the final res.
+
+Time Complexity: O(rowIndex^2)
+    - Each row i has i+1 elements, so total operations sum up to ~rowIndex^2/2.
+Space Complexity: O(rowIndex)
+    - We only store the current row at any time.
+"""
+
 from typing import List
 
 class Solution:
