@@ -14,3 +14,8 @@ class Solution:
                 T_sum += d[s[i]]
                 i += 1
         return T_sum
+    
+    # Example run for local testing
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.romanToInt("MCMXCIV"))  # Expected 1994
