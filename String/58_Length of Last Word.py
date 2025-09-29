@@ -12,3 +12,10 @@ class Solution:
             i -= 1
 
         return length
+    
+    # Example tests
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.lengthOfLastWord("Hello World"))  # Expected 5
+    print(sol.lengthOfLastWord("   fly me   to   the moon  "))  # Expected 4
+    print(sol.lengthOfLastWord("luffy is still joyboy"))  # Expected 6
