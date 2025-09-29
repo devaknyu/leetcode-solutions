@@ -1,3 +1,14 @@
+"""
+LeetCode 58: Length of Last Word
+https://leetcode.com/problems/length-of-last-word/
+
+Approach:
+- Start from the end of the string.
+- Skip trailing spaces.
+- Count characters until reaching another space or the beginning.
+"""
+
+
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         length, i = 0, len(s) - 1
