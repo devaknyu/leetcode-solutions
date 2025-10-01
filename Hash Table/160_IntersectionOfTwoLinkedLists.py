@@ -1,3 +1,18 @@
+"""
+LeetCode 160: Intersection of Two Linked Lists
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+Approach: Two-Pointer Switching
+- Traverse both lists with two pointers.
+- When one pointer reaches the end, redirect it to the other list's head.
+- If lists intersect, pointers will eventually meet at intersection.
+- If not, both will become None.
+
+Time Complexity: O(m + n)
+Space Complexity: O(1)
+"""
+
+
 from typing import Optional
 
 class ListNode:
