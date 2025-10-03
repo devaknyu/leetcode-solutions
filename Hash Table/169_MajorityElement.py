@@ -1,4 +1,16 @@
+"""
+LeetCode 169: Majority Element
+https://leetcode.com/problems/majority-element/
 
+Approach: Boyer–Moore Voting Algorithm
+- Keep track of a candidate and a counter.
+- Reset candidate when counter is 0.
+- Increase counter if current element == candidate, otherwise decrease.
+- Guaranteed that the final candidate is the majority element.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
 
 from typing import List
 
