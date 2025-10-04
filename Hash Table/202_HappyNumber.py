@@ -16,3 +16,9 @@ class solution:
             output += digit
             n = n // 10
         return output
+
+# Example usage
+if __name__ == "__main__":
+    sol = solution()
+    print(sol.isHappy(19))   # Expected output: True
+    print(sol.isHappy(2))    # Expected output: False
