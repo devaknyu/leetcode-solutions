@@ -1,3 +1,17 @@
+"""
+LeetCode 202: Happy Number
+https://leetcode.com/problems/happy-number/
+
+Approach:
+- Use a set to track visited numbers.
+- Continuously replace n with the sum of the squares of its digits.
+- If n becomes 1 → happy number.
+- If n repeats (cycle detected) → not a happy number.
+
+Time Complexity: O(log n)
+Space Complexity: O(log n)
+"""
+
 class solution:
     def isHappy(self, n: int) -> bool:
         visit = set()
