@@ -1,3 +1,18 @@
+"""
+LeetCode 217: Contains Duplicate
+https://leetcode.com/problems/contains-duplicate/
+
+Approach:
+- Use a set to keep track of elements seen so far.
+- Iterate through each number in the list:
+  - If the number is already in the set, return True (duplicate found).
+  - Otherwise, add it to the set.
+- If the loop completes with no duplicates, return False.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+"""
+
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
         seen = set()
