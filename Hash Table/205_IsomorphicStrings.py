@@ -11,3 +11,12 @@ class Solution:
             mapTS[c2] = c1
 
         return True
+    
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isIsomorphic("egg", "add"))     # Expected output: True
+    print(sol.isIsomorphic("foo", "bar"))     # Expected output: False
+    print(sol.isIsomorphic("paper", "title")) # Expected output: True
+    print(sol.isIsomorphic("ab", "aa"))       # Expected output: False
