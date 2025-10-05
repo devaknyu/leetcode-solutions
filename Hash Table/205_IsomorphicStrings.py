@@ -1,3 +1,17 @@
+"""
+LeetCode 205: Isomorphic Strings
+https://leetcode.com/problems/isomorphic-strings/
+
+Approach:
+- Use two hash maps to maintain mappings between s → t and t → s.
+- Iterate over both strings simultaneously.
+- If a mapping conflict occurs (e.g., same character maps to different targets), return False.
+- Otherwise, continue and return True if all mappings are consistent.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+"""
+
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         mapST, mapTS = {}, {}
