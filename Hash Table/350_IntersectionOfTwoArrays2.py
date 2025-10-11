@@ -13,3 +13,9 @@ class Solution:
                 count[num] -= 1
         
         return result
+    
+    # Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.intersect([1, 2, 2, 1], [2, 2]))          # Expected output: [2, 2]
+    print(sol.intersect([4, 9, 5], [9, 4, 9, 8, 4]))    # Expected output: [9, 4]
