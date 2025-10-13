@@ -16,3 +16,10 @@ class Solution:
             else:
                 available[c] -= 1
         return True
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.canConstruct("a", "b"))        # Expected output: False
+    print(sol.canConstruct("aa", "ab"))      # Expected output: False
+    print(sol.canConstruct("aa", "aab"))     # Expected output: True
