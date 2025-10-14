@@ -11,3 +11,10 @@ class Solution:
                 L = R
             R += 1
         return profit
+    
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxProfit([7,1,5,3,6,4]))  # Expected output: 5
+    print(sol.maxProfit([7,6,4,3,1]))    # Expected output: 0
