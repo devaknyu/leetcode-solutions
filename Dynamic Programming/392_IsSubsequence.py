@@ -9,3 +9,9 @@ class Solution:
 
         return True if i == len(s) else False
 
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isSubsequence("abc", "ahbgdc"))  # Expected output: True
+    print(sol.isSubsequence("axc", "ahbgdc"))  # Expected output: False
+    print(sol.isSubsequence("", "ahbgdc"))     # Expected output: True (empty string is always a subsequence)
