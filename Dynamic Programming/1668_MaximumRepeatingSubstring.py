@@ -13,3 +13,11 @@ class Solution:
                 i -= len(word)
             i += 1
         return max_rep
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxRepeating("ababc", "ab"))   # Expected output: 2
+    print(sol.maxRepeating("aaabaaaabaaabaaaabaaaabaaaabaaaaba", "aaaba"))  # Expected output: 5
+    print(sol.maxRepeating("ab", "ab"))      # Expected output: 1
+    print(sol.maxRepeating("a", "aa"))       # Expected output: 0
