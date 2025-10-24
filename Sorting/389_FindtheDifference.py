@@ -1,7 +1,8 @@
 class Solution:
-    def getLongestSubsequence(self, words: List[str], groups: List[int]) -> List[str]:
-        res = [words[0]]
-        for i in range(1, len(groups)):
-            if groups[i] != groups[i - 1]:
-                res.append(words[i])
-        return res
+    def findTheDifference(self, s: str, t: str) -> str:
+        sum_S, sum_T = 0, 0
+        for i in s:
+            sum_S += ord(i)
+        for i in t:
+            sum_T += ord(i)
+        return chr(sum_T - sum_S)
