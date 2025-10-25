@@ -13,3 +13,10 @@ class Solution:
             else:
                 break
         return i
+
+# Example usage
+    if __name__ == "__main__":
+        sol = Solution()
+        print(sol.findContentChildren([1, 2, 3], [1, 1]))   # Expected output: 1
+        print(sol.findContentChildren([1, 2], [1, 2, 3]))   # Expected output: 2
+        print(sol.findContentChildren([10, 9, 8, 7], [5, 6, 7, 8]))  # Expected output: 2
