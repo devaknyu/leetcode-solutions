@@ -1,5 +1,5 @@
 class Solution:
-    def findRelativeRanks(self, score: List[int]) -> List[str]:
+    def findRelativeRanks(self, score: list[int]) -> list[str]:
         sorted_score = sorted(score, reverse=True)
         rank_map = {}
 
@@ -15,3 +15,10 @@ class Solution:
         
         result = [rank_map[i] for i in score]
         return result
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.findRelativeRanks([5, 4, 3, 2, 1]))   # Expected: ["Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"]
+    print(sol.findRelativeRanks([10, 3, 8, 9, 4]))  # Expected: ["Gold Medal", "5", "Bronze Medal", "Silver Medal", "4"]
+    print(sol.findRelativeRanks([1]))               # Expected: ["Gold Medal"]
