@@ -19,3 +19,9 @@ class Solution:
 
     def AlphaNum(self, c: str) -> bool:
         return (ord('0') <= ord(c) <= ord('9')) or (ord('a') <= ord(c.lower()) <= ord('z'))
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isPalindrome("A man, a plan, a canal: Panama"))  # Expected output: True
+    print(sol.isPalindrome("race a car"))                      # Expected output: False
+    print(sol.isPalindrome(" "))                               # Expected output: True
