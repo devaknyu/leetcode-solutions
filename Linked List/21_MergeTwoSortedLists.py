@@ -28,3 +28,25 @@ class Solution:
 
 
 # Example usage
+if __name__ == "__main__":
+    # Helper to build and print linked lists
+    def build_list(values):
+        dummy = ListNode()
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    def print_list(node):
+        result = []
+        while node:
+            result.append(node.val)
+            node = node.next
+        print(result)
+
+    sol = Solution()
+    l1 = build_list([1, 2, 4])
+    l2 = build_list([1, 3, 4])
+    merged = sol.mergeTwoLists(l1, l2)
+    print_list(merged)  # Expected output: [1, 1, 2, 3, 4, 4]
