@@ -32,3 +32,19 @@ class Solution:
             last = last.next
 
         return True
+    
+# Example usage
+if __name__ == "__main__":
+    def build_list(values):
+        dummy = ListNode()
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    sol = Solution()
+    head1 = build_list([1, 2, 2, 1])
+    head2 = build_list([1, 2])
+    print(sol.isPalindrome(head1))  # Expected output: True
+    print(sol.isPalindrome(head2))  # Expected output: False
