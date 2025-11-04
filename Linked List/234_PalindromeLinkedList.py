@@ -1,3 +1,36 @@
+"""
+LeetCode 234: Palindrome Linked List
+https://leetcode.com/problems/palindrome-linked-list/
+
+Approach:
+- We need to determine if a singly linked list reads the same forward and backward.
+- The challenge is to do this efficiently **in O(n) time and O(1) space**.
+
+Steps:
+1. **Find the middle of the linked list** using the fast and slow pointer approach:
+   - Move `fast` by two steps and `slow` by one step each iteration.
+   - When `fast` reaches the end, `slow` will be at the midpoint.
+2. **Reverse the second half** of the linked list starting from the `slow` pointer.
+3. **Compare the first half and the reversed second half** node by node:
+   - If all corresponding values match, the list is a palindrome.
+   - If any mismatch is found, return `False`.
+4. Optionally, the list can be restored to its original form by reversing the second half again (not required by LeetCode).
+5. Return `True` if all checks pass.
+
+Example:
+Input:
+  head = [1, 2, 2, 1]
+Process:
+  - Find middle → slow at second 2
+  - Reverse second half → [1, 2]
+  - Compare halves → [1, 2] == [1, 2]
+Output:
+  True
+
+Time Complexity: O(n) — one pass to find the middle + one to reverse + one to compare  
+Space Complexity: O(1) — in-place reversal and comparison
+"""
+
 from typing import Optional
 class ListNode:
     def __init__(self, val=0, next=None):
