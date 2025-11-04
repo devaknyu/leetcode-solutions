@@ -1,3 +1,33 @@
+"""
+LeetCode 203: Remove Linked List Elements
+https://leetcode.com/problems/remove-linked-list-elements/
+
+Approach:
+- We are given the head of a linked list and an integer `val`.  
+  We must remove all nodes from the list that contain `val`.
+
+Steps:
+1. Create a `dummy` node to simplify edge cases (e.g., when the head node itself must be removed).
+2. Use a `tail` pointer to build the new filtered list.
+3. Traverse the original list (`head`):
+   - If `head.val` is **not equal** to `val`, link it to the new list (`tail.next = head`) and move `tail` forward.
+   - Otherwise, skip the node by moving `head` forward.
+4. After traversal, set `tail.next = None` to ensure the new list terminates cleanly.
+5. Return `dummy.next` — the head of the filtered list without unwanted elements.
+
+Example:
+Input:
+  head = [1, 2, 6, 3, 4, 5, 6], val = 6
+Process:
+  → Skip nodes with value 6  
+  → Keep nodes [1, 2, 3, 4, 5]
+Output:
+  [1, 2, 3, 4, 5]
+
+Time Complexity: O(n) — one pass through the list  
+Space Complexity: O(1) — in-place modification without extra storage
+"""
+
 from typing import Optional
 # Definition for singly-linked list.
 class ListNode:
