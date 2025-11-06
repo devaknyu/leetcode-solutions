@@ -1,3 +1,38 @@
+"""
+LeetCode 876: Middle of the Linked List
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+Approach:
+- We need to return the middle node of a singly linked list.
+- If there are two middle nodes (i.e., the list has an even length), return the **second** one.
+
+Technique: Two-Pointer (Tortoise and Hare)
+1. Use two pointers:
+   - `slow` → moves one step at a time.
+   - `fast` → moves two steps at a time.
+2. When `fast` reaches the end (or `fast.next` is None),
+   `slow` will be at the middle of the list.
+3. Return the `slow` pointer as the middle node.
+
+Example:
+Input:
+  head = [1, 2, 3, 4, 5]
+Process:
+  slow → 1→2→3→4→5  
+  fast → 1→3→5  
+  When fast reaches the end, slow is at 3.
+Output:
+  [3, 4, 5]
+
+Input (even length):
+  head = [1, 2, 3, 4, 5, 6]
+Output:
+  [4, 5, 6]
+
+Time Complexity: O(n) — traverse each node once  
+Space Complexity: O(1) — use only two pointers
+"""
+
 from typing import Optional
 # Definition for singly-linked list.
 class ListNode:
