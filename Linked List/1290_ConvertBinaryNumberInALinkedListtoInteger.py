@@ -1,3 +1,33 @@
+"""
+LeetCode 1290: Convert Binary Number in a Linked List to Integer
+https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+
+Approach:
+- We are given a singly linked list where each node contains a binary digit (0 or 1).
+- The binary number is represented from the most significant bit (head) to the least significant bit.
+- We need to convert this binary representation to its decimal (integer) equivalent.
+
+Technique: Bit Manipulation / Linear Traversal
+1. Traverse the linked list from head to tail.
+2. For each node, shift the current result left by 1 bit (multiply by 2) and add the current node's value.
+3. This effectively builds the decimal value as we traverse through each bit.
+
+Example:
+Input: [1,0,1]
+Process:
+  Start: result = 0
+  Node 1: result = 0*2 + 1 = 1
+  Node 0: result = 1*2 + 0 = 2
+  Node 1: result = 2*2 + 1 = 5
+Output: 5
+
+Input: [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]
+Output: 18880
+
+Time Complexity: O(n) — traverse each node once
+Space Complexity: O(1) — use only constant extra space
+"""
+
 from typing import Optional
 # Definition for singly-linked list.
 class ListNode:
