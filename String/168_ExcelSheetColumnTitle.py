@@ -1,4 +1,44 @@
+"""
+LeetCode 168: Excel Sheet Column Title
+https://leetcode.com/problems/excel-sheet-column-title/
 
+Approach:
+- We need to convert a positive integer to an Excel column title (like 1→"A", 28→"AB").
+- This is essentially converting a number from base 10 to base 26, but with a twist:
+  - Excel columns are 1-indexed (A=1, B=2, ..., Z=26), not 0-indexed.
+  - This means we need to adjust by subtracting 1 before each conversion step.
+
+Technique: Base Conversion with Adjustment
+1. While the columnNumber is greater than 0:
+   - Subtract 1 from columnNumber to convert from 1-indexed to 0-indexed
+   - Calculate the current character using modulo 26
+   - Append the corresponding uppercase letter to the result
+   - Update columnNumber using integer division by 26
+2. Reverse the result string at the end since we built it from least significant to most significant digit.
+
+Why subtract 1?
+- In normal base conversion, digits range from 0 to (base-1)
+- But Excel columns range from 1 to 26
+- Subtracting 1 maps: 1→0 (A), 2→1 (B), ..., 26→25 (Z)
+
+Example:
+Input: 28
+Process:
+  Iteration 1: (28-1)=27 → 27%26=1 → 'B', (27//26)=1
+  Iteration 2: (1-1)=0 → 0%26=0 → 'A', (0//26)=0
+  Reverse "BA" → "AB"
+Output: "AB"
+
+Input: 701
+Process:
+  Iteration 1: (701-1)=700 → 700%26=24 → 'Y', (700//26)=26
+  Iteration 2: (26-1)=25 → 25%26=25 → 'Z', (25//26)=0
+  Reverse "ZY" → "YZ"
+Output: "ZY"
+
+Time Complexity: O(log₂₆(n)) — number of digits in base 26 representation
+Space Complexity: O(log₂₆(n)) — for storing the result string
+"""
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
         res = ""
