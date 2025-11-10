@@ -34,6 +34,7 @@ if __name__ == "__main__":
         ("A", 0, 1),           # Single character
     ]
     
+    
     for s, k, expected in test_cases:
         result = sol.characterReplacement(s, k)
         status = "✓" if result == expected else "✗"
