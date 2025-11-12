@@ -30,3 +30,32 @@ class Solution:
                     res[(r + 1) % N] = curr_sum
         
         return res
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases with small examples
+    test_cases = [
+        ([5, 7, 1, 4], 3, [12, 10, 16, 13]),    # k > 0
+        ([2, 4, 9, 3], -2, [12, 5, 6, 13]),     # k < 0  
+        ([1, 2, 3, 4], 0, [0, 0, 0, 0]),        # k = 0
+        ([1], 1, [0]),                           # single element
+        ([1, 2], 1, [2, 1]),                     # two elements
+    ]
+    
+    for code, k, expected in test_cases:
+        result = sol.decrypt(code, k)
+        status = "✓" if result == expected else "✗"
+        print(f"code={code}, k={k} → {result} (Expected: {expected}) {status}")
+    
+    # Detailed explanation
+    print("\n" + "="*50)
+    print("Detailed example: code = [5, 7, 1, 4], k = 3")
+    print("Circular array: [5, 7, 1, 4]")
+    print("Each element replaced with sum of next 3 elements:")
+    print("  code[0] = 7 + 1 + 4 = 12")
+    print("  code[1] = 1 + 4 + 5 = 10") 
+    print("  code[2] = 4 + 5 + 7 = 16")
+    print("  code[3] = 5 + 7 + 1 = 13")
+    print("Result: [12, 10, 16, 13]")
