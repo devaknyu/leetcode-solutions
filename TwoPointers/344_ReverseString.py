@@ -1,3 +1,20 @@
+"""
+LeetCode 344: Reverse String
+https://leetcode.com/problems/reverse-string/
+
+Approach:
+- Reverse the string in-place using two pointers
+- Swap characters from both ends moving towards the center
+
+Technique: Two-Pointer Swap
+1. Left pointer starts at beginning, right pointer at end
+2. Swap characters at both pointers
+3. Move pointers inward until they meet
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
 from typing import List
 class Solution:
     def reverseString(self, s: List[str]) -> None:
