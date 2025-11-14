@@ -10,3 +10,21 @@ class Solution:
                 l += 1
                 r -= 1
         return ''.join(char)
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ("abcdefg", 2),    # → "bacdfeg"
+        ("abcd", 2),       # → "bacd"
+        ("abc", 2),        # → "bac"
+        ("a", 2),          # → "a"
+        ("abcdef", 3),     # → "cbadef"
+    ]
+    
+    for s, k in test_cases:
+        print(f"Input:  s='{s}', k={k}")
+        result = sol.reverseStr(s, k)
+        print(f"Output: '{result}'\n")
