@@ -1,3 +1,21 @@
+"""
+LeetCode 541: Reverse String II
+https://leetcode.com/problems/reverse-string-ii/
+
+Approach:
+- Reverse the first k characters for every 2k characters
+- If fewer than k characters left, reverse all of them
+- If between k and 2k characters left, reverse only first k
+
+Technique: Segmented Reversal with Two-Pointer
+1. Process string in chunks of 2k characters
+2. For each chunk, reverse first k characters using two-pointer swap
+3. Handle edge cases where remaining characters < k
+
+Time Complexity: O(n)
+Space Complexity: O(n) for character list
+"""
+
 class Solution:
     def reverseStr(self, s: str, k: int) -> str:
         char = list(s)
