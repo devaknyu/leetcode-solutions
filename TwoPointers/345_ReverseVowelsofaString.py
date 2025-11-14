@@ -1,3 +1,21 @@
+"""
+LeetCode 345: Reverse Vowels of a String
+https://leetcode.com/problems/reverse-vowels-of-a-string/
+
+Approach:
+- Reverse only the vowels in the string while keeping consonants in their original positions
+- Use two pointers to find vowels from both ends and swap them
+
+Technique: Two-Pointer with Vowel Checking
+1. Convert string to list for in-place modification
+2. Use left and right pointers starting from both ends
+3. Move left pointer until it finds a vowel
+4. Move right pointer until it finds a vowel  
+5. Swap the vowels and continue until pointers meet
+
+Time Complexity: O(n)
+Space Complexity: O(n) for the character list
+"""
 
 class Solution:
     def reverseVowels(self, s: str) -> str:
