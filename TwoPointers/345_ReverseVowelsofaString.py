@@ -19,3 +19,21 @@ class Solution:
             r -= 1
             
         return ''.join(char)
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        "hello",     # → "holle"
+        "leetcode",  # → "leotcede"  
+        "aA",        # → "Aa"
+        "xyz",       # → "xyz"
+        "ai"         # → "ia"
+    ]
+    
+    for s in test_cases:
+        print(f"Input:  {s}")
+        result = sol.reverseVowels(s)
+        print(f"Output: {result}\n")
