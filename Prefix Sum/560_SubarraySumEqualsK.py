@@ -1,3 +1,23 @@
+"""
+LeetCode 560: Subarray Sum Equals K
+https://leetcode.com/problems/subarray-sum-equals-k/
+
+Approach:
+- Count subarrays where sum equals k using prefix sums
+- Track cumulative sum frequencies in hash map
+- If prefixSum - k exists in map, we found subarrays summing to k
+
+Technique: Prefix Sum with Hash Map
+1. Track running sum and count its frequency
+2. For each number, check if (currentSum - k) exists in map
+3. Each occurrence of (currentSum - k) represents a valid subarray
+4. Update frequency of current sum
+
+Time Complexity: O(n)
+Space Complexity: O(n) for prefix sums map
+"""
+
+
 from typing import List
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
