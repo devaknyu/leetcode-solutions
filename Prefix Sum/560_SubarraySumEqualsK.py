@@ -13,3 +13,18 @@ class Solution:
             prefixSums[curSum] = 1 + prefixSums.get(curSum, 0)
             
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([1,1,1], 2),     # → 2
+        ([1,2,3], 3),     # → 2
+        ([1,-1,0], 0),    # → 3
+        ([1], 0),         # → 0
+    ]
+    
+    for nums, k in test_cases:
+        print(f"nums={nums}, k={k} → {sol.subarraySum(nums, k)}")
