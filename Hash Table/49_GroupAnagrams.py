@@ -11,3 +11,18 @@ class Solution:
             res[tuple(count)].append(s)
         
         return list(res.values())
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ["eat","tea","tan","ate","nat","bat"],
+        [""],
+        ["a"],
+    ]
+    
+    for strs in test_cases:
+        print(f"Input: {strs}")
+        result = sol.groupAnagrams(strs)
+        print(f"Output: {result}\n")
