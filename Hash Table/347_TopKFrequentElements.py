@@ -1,3 +1,21 @@
+"""
+LeetCode 347: Top K Frequent Elements
+https://leetcode.com/problems/top-k-frequent-elements/
+
+Approach:
+- Find k most frequent elements using bucket sort
+- Count frequencies, then group numbers by frequency in buckets
+- Extract top k from highest frequency buckets
+
+Technique: Bucket Sort with Frequency Counting
+1. Count frequency of each number using hash map
+2. Create buckets where index represents frequency
+3. Place numbers in buckets according to their frequency
+4. Iterate buckets from highest to lowest frequency to get top k
+
+Time Complexity: O(n) for counting + O(n) for bucket processing = O(n)
+Space Complexity: O(n) for frequency map and buckets
+"""
 from typing import List
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
