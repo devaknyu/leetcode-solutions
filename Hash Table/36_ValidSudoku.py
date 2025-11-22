@@ -1,3 +1,22 @@
+"""
+LeetCode 36: Valid Sudoku
+https://leetcode.com/problems/valid-sudoku/
+
+Approach:
+- Check if 9x9 Sudoku board is valid (no duplicates in rows, columns, or 3x3 sub-boxes)
+- Don't need to solve, only validate existing numbers
+- Use sets to track seen numbers in rows, columns, and sub-boxes
+
+Technique: Hash Sets for Rows, Columns, and Sub-boxes
+1. Track numbers in each row using dictionary of sets
+2. Track numbers in each column using dictionary of sets  
+3. Track numbers in each 3x3 sub-box using (r//3, c//3) as key
+4. Return false if any duplicate found
+
+Time Complexity: O(1) - fixed 81 cells to check
+Space Complexity: O(1) - fixed storage for 9 rows, 9 cols, 9 boxes
+"""
+
 import collections
 from typing import List
 
