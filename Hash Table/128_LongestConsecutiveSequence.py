@@ -1,3 +1,22 @@
+"""
+LeetCode 128: Longest Consecutive Sequence
+https://leetcode.com/problems/longest-consecutive-sequence/
+
+Approach:
+- Find the longest sequence of consecutive numbers in unsorted array
+- Use set for O(1) lookups
+- Only start counting from numbers that are beginning of sequences
+
+Technique: Hash Set with Sequence Detection
+1. Convert array to set for O(1) lookups
+2. For each number, check if it's start of sequence (num-1 not in set)
+3. If start of sequence, count consecutive numbers following it
+4. Track maximum sequence length found
+
+Time Complexity: O(n) - each number processed at most twice
+Space Complexity: O(n) for the set
+"""
+
 from typing import List
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
