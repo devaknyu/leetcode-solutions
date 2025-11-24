@@ -6,10 +6,15 @@ Approach:
 - Find the longest sequence of consecutive numbers in unsorted array
 - Use set for O(1) lookups
 - Only start counting from numbers that are beginning of sequences
+- Iterate over numSet instead of nums to avoid duplicates
+
+Optimization:
+- Loop through numSet instead of nums to avoid processing duplicates
+- This prevents TLE for large inputs with many duplicates
 
 Technique: Hash Set with Sequence Detection
-1. Convert array to set for O(1) lookups
-2. For each number, check if it's start of sequence (num-1 not in set)
+1. Convert array to set for O(1) lookups and remove duplicates
+2. For each number in set, check if it's start of sequence (num-1 not in set)
 3. If start of sequence, count consecutive numbers following it
 4. Track maximum sequence length found
 
@@ -23,10 +28,11 @@ class Solution:
         numSet = set(nums)
         longest = 0
 
-        for num in nums:
+        # Iterate over numSet instead of nums to avoid duplicate processing
+        for num in numSet:
             # Check if this is the start of a sequence
             if (num - 1) not in numSet:
-                length = 0
+                length = 1
                 # Count consecutive numbers
                 while (num + length) in numSet:
                     length += 1
