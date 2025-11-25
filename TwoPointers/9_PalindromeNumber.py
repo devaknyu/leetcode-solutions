@@ -14,3 +14,22 @@ class Solution:
             l += 1
             r -= 1
         return True
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        121,     # → True
+        -121,    # → False
+        10,      # → False
+        0,       # → True
+        12321,   # → True
+        12345,   # → False
+    ]
+    
+    for x in test_cases:
+        print(f"Input:  {x}")
+        result = sol.isPalindrome(x)
+        print(f"Output: {result}\n")
