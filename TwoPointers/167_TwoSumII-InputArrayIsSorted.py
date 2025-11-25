@@ -13,3 +13,21 @@ class Solution:
             else:  # current_sum < target
                 l += 1
         return []
+
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([2, 7, 11, 15], 9),   # → [1, 2]
+        ([2, 3, 4], 6),        # → [1, 3]
+        ([-1, 0], -1),         # → [1, 2]
+        ([1, 2, 3, 4], 7),     # → [3, 4]
+    ]
+    
+    for numbers, target in test_cases:
+        print(f"numbers={numbers}, target={target}")
+        result = sol.twoSum(numbers, target)
+        print(f"Output: {result}\n")
