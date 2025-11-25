@@ -1,3 +1,22 @@
+"""
+LeetCode 9: Palindrome Number
+https://leetcode.com/problems/palindrome-number/
+
+Approach:
+- Check if integer is palindrome (reads same forward and backward)
+- Convert to string and use two pointers to compare characters
+- Negative numbers cannot be palindromes
+
+Technique: Two-Poiter String Comparison
+1. Convert integer to string
+2. Use left and right pointers to compare characters from both ends
+3. Return false if any mismatch found
+4. Return true if all characters match
+
+Time Complexity: O(n) where n is number of digits
+Space Complexity: O(n) for string conversion
+"""
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # Negative numbers are not palindromes
