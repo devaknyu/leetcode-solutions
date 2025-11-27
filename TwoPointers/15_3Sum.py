@@ -24,3 +24,20 @@ class Solution:
                     while l < r and nums[l] == nums[l-1]:
                         l += 1
         return res
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        [-1, 0, 1, 2, -1, -4],  # → [[-1,-1,2],[-1,0,1]]
+        [0, 1, 1],               # → []
+        [0, 0, 0],               # → [[0,0,0]]
+        [1, -1, -1, 0],          # → [[-1,0,1]]
+    ]
+    
+    for nums in test_cases:
+        print(f"Input:  {nums}")
+        result = sol.threeSum(nums)
+        print(f"Output: {result}\n")
