@@ -18,3 +18,20 @@ class Solution:
                 r -= 1
                 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        [1, 8, 6, 2, 5, 4, 8, 3, 7],  # → 49
+        [1, 1],                         # → 1
+        [4, 3, 2, 1, 4],               # → 16
+        [1, 2, 1],                     # → 2
+    ]
+    
+    for height in test_cases:
+        print(f"Input:  {height}")
+        result = sol.maxArea(height)
+        print(f"Output: {result}\n")
