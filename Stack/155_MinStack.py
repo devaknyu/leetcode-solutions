@@ -19,3 +19,34 @@ class MinStack:
         
     def getMin(self) -> int:
         return self.minstack[-1]
+      
+# Example usage
+if __name__ == "__main__":
+    minStack = MinStack()
+    
+    operations = [
+        ("push", -2),
+        ("push", 0),
+        ("push", -3),
+        ("getMin", None),
+        ("pop", None),
+        ("top", None),
+        ("getMin", None),
+    ]
+    
+    for operation, value in operations:
+        if operation == "push":
+            minStack.push(value)
+            print(f"push({value})")
+        elif operation == "pop":
+            minStack.pop()
+            print("pop()")
+        elif operation == "top":
+            result = minStack.top()
+            print(f"top() = {result}")
+        elif operation == "getMin":
+            result = minStack.getMin()
+            print(f"getMin() = {result}")
+    
+    print(f"\nFinal stack: {minStack.stack}")
+    print(f"Final min stack: {minStack.minstack}")
