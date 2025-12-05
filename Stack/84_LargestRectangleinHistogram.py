@@ -19,3 +19,20 @@ class Solution:
             max_area = max(max_area, h * (len(heights) - i))
             
         return max_area
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        [2, 1, 5, 6, 2, 3],  # → 10
+        [2, 4],              # → 4
+        [1],                 # → 1
+        [2, 1, 2],           # → 3
+    ]
+    
+    for heights in test_cases:
+        print(f"Histogram: {heights}")
+        result = sol.largestRectangleArea(heights)
+        print(f"Largest rectangle area: {result}\n")
