@@ -1,3 +1,24 @@
+"""
+LeetCode 33: Search in Rotated Sorted Array
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+Approach:
+- Search for target in rotated sorted array (no duplicates)
+- Modified binary search that handles rotation point
+- Determine which half is properly sorted and search accordingly
+
+Technique: Modified Binary Search with Rotation Handling
+1. Check if middle element equals target
+2. Determine which half is sorted (left or right)
+3. Check if target is within sorted half:
+   - If yes, search in that half
+   - If no, search in other half
+4. Continue until target found or search space exhausted
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
 from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
