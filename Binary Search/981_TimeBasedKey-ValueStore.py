@@ -1,3 +1,24 @@
+"""
+LeetCode 981: Time Based Key-Value Store
+https://leetcode.com/problems/time-based-key-value-store/
+
+Approach:
+- Design time-based key-value store supporting set and get operations
+- set(key, value, timestamp): store value with timestamp
+- get(key, timestamp): get most recent value for key with timestamp <= given timestamp
+- If no such timestamp, return empty string
+
+Technique: Hash Map with Binary Search
+1. Dictionary where key maps to list of [value, timestamp] pairs
+2. Timestamps are strictly increasing (as per problem constraints)
+3. Use binary search to find appropriate timestamp in sorted list
+
+Time Complexity:
+- set: O(1) amortized (append to list)
+- get: O(log n) for binary search
+Space Complexity: O(n) for storing all key-value pairs
+"""
+
 class TimeMap:
 
     def __init__(self):
