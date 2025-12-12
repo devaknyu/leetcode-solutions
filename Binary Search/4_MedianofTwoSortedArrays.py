@@ -35,3 +35,21 @@ class Solution:
             # A_right too small, move right in A
             else:
                 l = i + 1
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([1, 3], [2]),         # → 2.0
+        ([1, 2], [3, 4]),      # → 2.5
+        ([0, 0], [0, 0]),      # → 0.0
+        ([], [1]),             # → 1.0
+        ([2], []),             # → 2.0
+    ]
+    
+    for nums1, nums2 in test_cases:
+        print(f"nums1={nums1}, nums2={nums2}")
+        result = sol.findMedianSortedArrays(nums1, nums2)
+        print(f"Median: {result}\n")
