@@ -24,3 +24,26 @@ class Solution:
                 l = m + 1
                 
         return -1  # Should never reach here if there's at least one bad version
+
+# Example usage
+if __name__ == "__main__":
+    # Mock isBadVersion function for testing
+    first_bad = 4
+    def isBadVersion(version: int) -> bool:
+        return version >= first_bad
+    
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        (5, 4),   # n=5, first bad=4
+        (1, 1),   # n=1, first bad=1
+        (10, 2),  # n=10, first bad=2
+    ]
+    
+    for n, expected in test_cases:
+        # Update the global first_bad for mock function
+        first_bad = expected
+        result = sol.firstBadVersion(n)
+        status = "✓" if result == expected else "✗"
+        print(f"n={n}, first bad version={result} (Expected: {expected}) {status}")
