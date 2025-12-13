@@ -1,3 +1,22 @@
+"""
+LeetCode 278: First Bad Version
+https://leetcode.com/problems/first-bad-version/
+
+Approach:
+- Find the first bad version in a sequence of versions using binary search
+- API function isBadVersion(version) returns True if version is bad
+- Versions after first bad are also bad (due to inheritance)
+
+Technique: Binary Search with Boundary Condition
+1. Use binary search to find boundary between good and bad versions
+2. Check if current version is bad and previous is good (boundary found)
+3. If current is bad, search left for earlier bad version
+4. If current is good, search right for bad version
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
 # NOTE:
 # On LeetCode, isBadVersion is provided by the platform.
 # This stub exists ONLY to avoid editor / linter errors in local environments.
