@@ -1,3 +1,23 @@
+"""
+LeetCode 69: Sqrt(x)
+https://leetcode.com/problems/sqrtx/
+
+Approach:
+- Find integer square root of x (floor value)
+- Use binary search to find largest integer whose square <= x
+- Return the integer part only (no decimals)
+
+Technique: Binary Search on Square Values
+1. Search space: 0 to x
+2. For each mid, compare mid² with x
+3. If mid² > x, search left
+4. If mid² < x, update result and search right
+5. If mid² == x, return mid
+
+Time Complexity: O(log x)
+Space Complexity: O(1)
+"""
+
 class Solution:
     def mySqrt(self, x: int) -> int:
         if x < 2:
