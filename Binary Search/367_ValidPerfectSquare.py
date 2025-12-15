@@ -1,3 +1,24 @@
+"""
+LeetCode 367: Valid Perfect Square
+https://leetcode.com/problems/valid-perfect-square/
+
+Approach:
+- Check if a number is a perfect square (integer square root exists)
+- Use binary search to find square root
+- Return True if exact square found, False otherwise
+
+Technique: Binary Search on Square Values
+1. Search space: 0 to num
+2. For each mid, compare mid² with num
+3. If mid² > num, search left
+4. If mid² < num, search right
+5. If mid² == num, return True
+6. If loop ends, return False
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
         if num < 2:
