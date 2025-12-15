@@ -17,3 +17,23 @@ class Solution:
                 l = m + 1
         
         return False
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        16,    # → True (4²)
+        14,    # → False
+        1,     # → True (1²)
+        9,     # → True (3²)
+        25,    # → True (5²)
+        26,    # → False
+        100,   # → True (10²)
+    ]
+    
+    for num in test_cases:
+        print(f"num = {num}")
+        result = sol.isPerfectSquare(num)
+        print(f"Perfect square: {result}\n")
