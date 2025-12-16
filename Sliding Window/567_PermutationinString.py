@@ -40,3 +40,21 @@ class Solution:
             l += 1
         
         return matches == 26
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ("ab", "eidbaooo"),   # → True
+        ("ab", "eidboaoo"),   # → False
+        ("a", "ab"),          # → True
+        ("abc", "bbbca"),     # → True
+        ("hello", "ooolleoooleh"),  # → False
+    ]
+    
+    for s1, s2 in test_cases:
+        print(f"s1='{s1}', s2='{s2}'")
+        result = sol.checkInclusion(s1, s2)
+        print(f"Permutation found: {result}\n")
