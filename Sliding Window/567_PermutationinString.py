@@ -1,3 +1,23 @@
+"""
+LeetCode 567: Permutation in String
+https://leetcode.com/problems/permutation-in-string/
+
+Approach:
+- Check if s2 contains a permutation (anagram) of s1
+- Use sliding window with character frequency counting
+- Compare frequency arrays of s1 and current window in s2
+- Use matches counter to track how many characters have matching frequencies
+
+Technique: Sliding Window with Frequency Arrays
+1. Create frequency arrays for s1 and first window of s2
+2. Count matches (positions where frequencies are equal)
+3. Slide window through s2, updating frequencies and matches
+4. Return True if matches == 26 (all characters match)
+
+Time Complexity: O(n) where n is length of s2
+Space Complexity: O(1) - fixed size arrays of 26
+"""
+
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         if len(s1) > len(s2):
