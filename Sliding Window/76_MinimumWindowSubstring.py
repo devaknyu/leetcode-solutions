@@ -36,4 +36,21 @@ class Solution:
         
         l, r = res
         return s[l:r+1] if reslen != float("infinity") else ""
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
     
+    # Test cases
+    test_cases = [
+        ("ADOBECODEBANC", "ABC"),  # → "BANC"
+        ("a", "a"),                # → "a"
+        ("a", "aa"),               # → ""
+        ("ab", "b"),               # → "b"
+        ("aa", "aa"),              # → "aa"
+    ]
+    
+    for s, t in test_cases:
+        print(f"s='{s}', t='{t}'")
+        result = sol.minWindow(s, t)
+        print(f"Minimum window: '{result}'\n")    
