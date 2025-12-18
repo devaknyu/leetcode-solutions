@@ -1,3 +1,23 @@
+"""
+LeetCode 239: Sliding Window Maximum
+https://leetcode.com/problems/sliding-window-maximum/
+
+Approach:
+- Find maximum element in each sliding window of size k
+- Use monotonic decreasing deque to store indices of potential maximums
+- Maintain deque such that it always contains indices in decreasing order of values
+
+Technique: Monotonic Deque
+1. Deque stores indices of elements in decreasing order of their values
+2. When adding new element, remove all smaller elements from end of deque
+3. Remove elements from front if they are outside current window
+4. Add current element's index to deque
+5. When window size reached, front of deque contains maximum
+
+Time Complexity: O(n) - each element added and removed from deque once
+Space Complexity: O(k) - deque size at most k
+"""
+
 import collections
 from typing import List
 
