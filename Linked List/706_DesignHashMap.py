@@ -44,3 +44,31 @@ class MyHashMap:
                 curr.next = curr.next.next
                 return
             curr = curr.next
+
+# Example usage
+if __name__ == "__main__":
+    hashMap = MyHashMap()
+    
+    operations = [
+        ("put", 1, 1),
+        ("put", 2, 2),
+        ("get", 1, 1),
+        ("get", 3, -1),
+        ("put", 2, 1),
+        ("get", 2, 1),
+        ("remove", 2),
+        ("get", 2, -1),
+    ]
+    
+    for op in operations:
+        if op[0] == "put":
+            hashMap.put(op[1], op[2])
+            print(f"put({op[1]}, {op[2]})")
+        elif op[0] == "get":
+            result = hashMap.get(op[1])
+            expected = op[2]
+            status = "✓" if result == expected else "✗"
+            print(f"get({op[1]}) = {result} (Expected: {expected}) {status}")
+        elif op[0] == "remove":
+            hashMap.remove(op[1])
+            print(f"remove({op[1]})")
