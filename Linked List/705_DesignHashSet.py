@@ -40,3 +40,31 @@ class MyHashSet:
                 return True
             curr = curr.next
         return False
+    
+# Example usage
+if __name__ == "__main__":
+    hashSet = MyHashSet()
+    
+    operations = [
+        ("add", 1),
+        ("add", 2),
+        ("contains", 1, True),
+        ("contains", 3, False),
+        ("add", 2),
+        ("contains", 2, True),
+        ("remove", 2),
+        ("contains", 2, False),
+    ]
+    
+    for op in operations:
+        if op[0] == "add":
+            hashSet.add(op[1])
+            print(f"add({op[1]})")
+        elif op[0] == "remove":
+            hashSet.remove(op[1])
+            print(f"remove({op[1]})")
+        elif op[0] == "contains":
+            result = hashSet.contains(op[1])
+            expected = op[2]
+            status = "✓" if result == expected else "✗"
+            print(f"contains({op[1]}) = {result} (Expected: {expected}) {status}")
