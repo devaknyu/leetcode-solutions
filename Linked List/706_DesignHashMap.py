@@ -1,3 +1,23 @@
+"""
+LeetCode 706: Design HashMap
+https://leetcode.com/problems/design-hashmap/
+
+Approach:
+- Design a HashMap without using built-in hash table libraries
+- Key-value storage using chaining with linked lists
+- Array of linked lists (buckets) with fixed size
+- Simple modulo hash function for distribution
+
+Technique: Array of Linked Lists (Chaining)
+1. Fixed size array (10⁴) of dummy head nodes for linked lists
+2. Hash function: key % array_size
+3. Each bucket contains linked list of key-value pairs with same hash
+4. Operations traverse linked list for that bucket
+
+Time Complexity (average): O(1) for put/get/remove
+Time Complexity (worst): O(n) if all keys hash to same bucket
+Space Complexity: O(n) where n is number of unique keys
+"""
 class ListNode:
     def __init__(self, key=-1, val=-1):
         self.key = key
