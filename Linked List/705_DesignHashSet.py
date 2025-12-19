@@ -1,3 +1,24 @@
+"""
+LeetCode 705: Design HashSet
+https://leetcode.com/problems/design-hashset/
+
+Approach:
+- Design a HashSet without using built-in hash table libraries
+- Use chaining with linked lists to handle collisions
+- Array of linked lists (buckets) with fixed size
+- Simple modulo hash function for distribution
+
+Technique: Array of Linked Lists (Chaining)
+1. Fixed size array (10⁴) of dummy head nodes for linked lists
+2. Hash function: key % array_size
+3. Each bucket contains linked list of elements with same hash
+4. Operations traverse linked list for that bucket
+
+Time Complexity (average): O(1) for add/remove/contains
+Time Complexity (worst): O(n) if all keys hash to same bucket
+Space Complexity: O(n) where n is number of unique keys
+"""
+
 class ListNode:
     def __init__(self, key):
         self.key = key
