@@ -1,3 +1,38 @@
+"""
+LeetCode 3507: Minimum Pair Removal to Sort Array I
+https://leetcode.com/problems/minimum-pair-removal-to-sort-array-i/
+
+Approach:
+- We are given an array of integers and can repeatedly perform a forced operation:
+  * Select the adjacent pair with the minimum sum (leftmost if tie)
+  * Replace the pair with their sum
+- The goal is to find the minimum number of such operations needed
+  to make the array non-decreasing.
+
+Key Observations:
+- The choice of pair is NOT flexible; it is strictly defined by the problem.
+- Therefore, this is a greedy simulation problem.
+- At each step, we must:
+  1. Check if the array is already non-decreasing
+  2. Find the adjacent pair with the minimum sum
+  3. Replace that pair with their sum
+  4. Count the operation
+
+Technique: Greedy + Array Simulation
+1. Repeatedly simulate the operation until the array becomes non-decreasing
+2. Use a helper function to check sorted condition
+3. Linearly scan adjacent pairs to find the minimum sum (leftmost in case of ties)
+4. Replace the pair using array slicing
+
+Time Complexity:
+- Each operation takes O(n) to scan adjacent pairs
+- In the worst case, up to O(n) operations
+- Overall Time Complexity: O(n^2)
+
+Space Complexity:
+- O(n) due to array reconstruction during simulation
+"""
+
 class Solution:
     def minimumOperations(self, nums):
         """
