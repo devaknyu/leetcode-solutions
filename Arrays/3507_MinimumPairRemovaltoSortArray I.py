@@ -31,3 +31,19 @@ class Solution:
             operations += 1
 
         return operations
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        ([3, 1, 2], 1),
+        ([1, 2, 3], 0),
+        ([5, 2, 1], 2),
+        ([10, 1, 2, 9], 1),
+    ]
+
+    for nums, expected in test_cases:
+        result = solution.minimumOperations(nums[:])  # copy to preserve original
+        status = "✓" if result == expected else "✗"
+        print(f"nums = {nums} → operations = {result} (Expected: {expected}) {status}")
