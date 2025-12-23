@@ -1,3 +1,43 @@
+"""
+LeetCode 138: Copy List with Random Pointer
+https://leetcode.com/problems/copy-list-with-random-pointer/
+
+Problem Description:
+- Each node in the linked list contains:
+  1. A value
+  2. A next pointer
+  3. A random pointer that can point to any node in the list or None
+- The task is to create a deep copy of the list.
+
+Node Definition:
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+
+Approach:
+- We must create new nodes such that:
+  * New nodes have the same values
+  * next and random pointers point to the copied nodes, not original ones
+
+Key Observations:
+- Random pointers may point forward, backward, or be None
+- We cannot assign random pointers correctly until all nodes are copied
+- A hash map allows us to map original nodes to their corresponding copies
+
+Technique: Hash Map (Old Node → New Node)
+1. First pass: Create a copy of each node and store mapping
+2. Second pass: Assign next and random pointers using the map
+3. Return the copied head
+
+Time Complexity:
+- O(n), where n is the number of nodes
+
+Space Complexity:
+- O(n), for the hash map
+"""
+
 from typing import Optional
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
