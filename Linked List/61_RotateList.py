@@ -32,3 +32,28 @@ class Solution:
         tail.next = head
 
         return new_head
+
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build linked list
+    def build_list(values):
+        dummy = ListNode(0)
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    # Helper function to print linked list
+    def print_list(head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        print(result)
+
+    # Example
+    head = build_list([1, 2, 3, 4, 5])
+    k = 2
+    head = Solution().rotateRight(head, k)
+    print_list(head)  # Expected: [4, 5, 1, 2, 3]
