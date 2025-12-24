@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, ListNode
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         """
