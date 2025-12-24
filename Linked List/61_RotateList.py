@@ -1,3 +1,36 @@
+"""
+LeetCode 61: Rotate List
+https://leetcode.com/problems/rotate-list/
+
+Problem Description:
+- Given the head of a singly linked list, rotate the list to the right by k places.
+- Rotation means moving the last k nodes to the front of the list.
+
+Approach:
+- Rotating a linked list repeatedly is inefficient.
+- Instead, we:
+  1. Compute the length of the list
+  2. Connect the tail to the head to form a cycle
+  3. Break the cycle at the correct position
+
+Key Observations:
+- Rotating by k where k >= length is redundant
+- Effective rotation needed is k % length
+- After rotation, the new head is at position (length - k)
+
+Technique: Linked List Traversal + Pointer Manipulation
+1. Traverse the list to find its length and tail
+2. Compute k % length
+3. Find the new tail at position (length - k - 1)
+4. Break the list and reconnect pointers accordingly
+
+Time Complexity:
+- O(n), where n is the number of nodes
+
+Space Complexity:
+- O(1), constant extra space
+"""
+
 from typing import Optional, ListNode
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
