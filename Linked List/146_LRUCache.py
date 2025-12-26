@@ -1,3 +1,42 @@
+"""
+LeetCode 146: LRU Cache
+https://leetcode.com/problems/lru-cache/
+
+Problem Description:
+- Design a data structure that follows the constraints of a
+  Least Recently Used (LRU) cache.
+- Implement the LRUCache class:
+  * LRUCache(int capacity)
+  * int get(int key)
+  * void put(int key, int value)
+- The cache should evict the least recently used item when capacity is exceeded.
+
+Key Observations:
+- We need O(1) time complexity for both get and put.
+- A hash map provides O(1) lookup.
+- A doubly linked list maintains usage order efficiently.
+
+Approach:
+- Use a hash map to store key → node mappings.
+- Use a doubly linked list to track usage order:
+  * Most recently used (MRU) near the right end
+  * Least recently used (LRU) near the left end
+- Use dummy head (left) and tail (right) nodes to simplify pointer handling.
+
+Technique: Hash Map + Doubly Linked List
+1. Hash map allows fast access to nodes
+2. Doubly linked list maintains order of usage
+3. On access or update, move node to MRU position
+4. On overflow, evict LRU node
+
+Time Complexity:
+- get: O(1)
+- put: O(1)
+
+Space Complexity:
+- O(capacity)
+"""
+
 class Node:
     def __init__(self, key, val):
         self.key, self.val = key, val
