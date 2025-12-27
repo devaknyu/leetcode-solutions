@@ -55,3 +55,33 @@ class Solution:
             tail.next = l2
 
         return dummy.next
+
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build a linked list
+    def build_list(values):
+        dummy = ListNode(0)
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    # Helper function to print linked list
+    def print_list(head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        print(result)
+
+    # Example
+    lists = [
+        build_list([1, 4, 5]),
+        build_list([1, 3, 4]),
+        build_list([2, 6])
+    ]
+
+    merged = Solution().mergeKLists(lists)
+    print_list(merged)  # Expected: [1, 1, 2, 3, 4, 4, 5, 6]
+
