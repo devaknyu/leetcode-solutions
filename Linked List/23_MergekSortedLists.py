@@ -1,3 +1,38 @@
+"""
+LeetCode 23: Merge k Sorted Lists
+https://leetcode.com/problems/merge-k-sorted-lists/
+
+Problem Description:
+- You are given an array of k linked lists.
+- Each linked list is sorted in ascending order.
+- Merge all the linked lists into one sorted linked list and return it.
+
+Approach:
+- Merging lists one by one is inefficient.
+- Instead, we use a divide-and-conquer approach similar to merge sort.
+- At each step, we merge pairs of linked lists until only one list remains.
+
+Key Observations:
+- Each linked list is already sorted.
+- Merging two sorted linked lists can be done in linear time.
+- Pairwise merging reduces the total number of merge operations.
+- The number of lists reduces by half after each iteration.
+
+Technique: Divide and Conquer + Two Pointer Linked List Merge
+1. While there is more than one list:
+   - Merge lists in pairs (list[0] with list[1], list[2] with list[3], etc.)
+2. Use a helper function to merge two sorted linked lists.
+3. Repeat until one merged list remains.
+
+Time Complexity:
+- O(N log k)
+  where N is the total number of nodes
+  and k is the number of linked lists
+
+Space Complexity:
+- O(1) extra space (excluding output list)
+"""
+
 from typing import Optional, List
 
 # Definition for singly-linked list.
