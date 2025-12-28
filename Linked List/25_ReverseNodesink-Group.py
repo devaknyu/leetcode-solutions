@@ -1,3 +1,40 @@
+"""
+LeetCode 25: Reverse Nodes in k-Group
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+Problem Description:
+- Given the head of a singly linked list, reverse the nodes of the list k at a time.
+- Nodes that are left over (less than k) at the end should remain as-is.
+- You may not alter node values; only pointers can be changed.
+
+Approach:
+- Reversing the entire list is not correct because we only reverse fixed-size groups.
+- Instead, we:
+  1. Process the list group by group
+  2. For each group of size k:
+     - Reverse the pointers within the group
+     - Reconnect the group to the rest of the list
+- A dummy node simplifies edge cases involving the head.
+
+Key Observations:
+- If fewer than k nodes remain, we stop processing.
+- Reversal must be done in-place using pointer manipulation.
+- Keeping track of group boundaries is critical to avoid breaking the list.
+
+Technique: Linked List Traversal + In-place Reversal
+1. Use a dummy node pointing to the head
+2. Find the k-th node from the current group’s start
+3. Reverse nodes between group start and group end
+4. Reconnect the reversed group to the previous and next sections
+5. Move to the next group
+
+Time Complexity:
+- O(n), where n is the number of nodes
+
+Space Complexity:
+- O(1), constant extra space
+"""
+
 from typing import Optional
 
 # Definition for singly-linked list.
