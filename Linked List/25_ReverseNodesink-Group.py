@@ -49,3 +49,27 @@ class Solution:
             k -= 1
         return curr
 
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build linked list
+    def build_list(values):
+        dummy = ListNode(0)
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    # Helper function to print linked list
+    def print_list(head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        print(result)
+
+    # Example
+    head = build_list([1, 2, 3, 4, 5])
+    k = 2
+    new_head = Solution().reverseKGroup(head, k)
+    print_list(new_head)  # Expected: [2, 1, 4, 3, 5]
