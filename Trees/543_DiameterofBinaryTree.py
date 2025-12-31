@@ -33,3 +33,21 @@ class Solution:
 
         dfs(root)
         return self.res
+
+# Example usage
+if __name__ == "__main__":
+    # Build tree
+    root = TreeNode(1,
+            TreeNode(2, TreeNode(4), TreeNode(5)),
+            TreeNode(3)
+        )
+
+    # Tree structure:
+    #       1
+    #      / \
+    #     2   3
+    #    / \
+    #   4   5
+
+    diameter = Solution().diameterOfBinaryTree(root)
+    print(diameter)  # Expected: 3
