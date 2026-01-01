@@ -34,3 +34,26 @@ class Solution:
             return balanced, 1 + max(left_height, right_height)
 
         return dfs(root)[0]
+
+# Example usage
+if __name__ == "__main__":
+    # Balanced tree example
+    balanced_root = TreeNode(3,
+        TreeNode(9),
+        TreeNode(20, TreeNode(15), TreeNode(7))
+    )
+
+    # Unbalanced tree example
+    unbalanced_root = TreeNode(1,
+        TreeNode(2,
+            TreeNode(3,
+                TreeNode(4),
+                None
+            ),
+            None
+        ),
+        None
+    )
+
+    print(Solution().isBalanced(balanced_root))    # Expected: True
+    print(Solution().isBalanced(unbalanced_root))  # Expected: False
