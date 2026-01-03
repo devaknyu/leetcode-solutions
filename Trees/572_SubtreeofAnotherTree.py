@@ -1,3 +1,40 @@
+"""
+LeetCode 572: Subtree of Another Tree
+https://leetcode.com/problems/subtree-of-another-tree/
+
+Problem Description:
+- Given the roots of two binary trees: root and subRoot,
+  determine if subRoot is a subtree of root.
+- A subtree of a tree is a tree consisting of a node in the original tree
+  and all of its descendants.
+- The subtree must match both structure and node values.
+
+Approach:
+- Traverse the main tree (root).
+- At each node, check whether the subtree rooted at that node
+  is identical to subRoot.
+- Use a helper function to compare two trees for equality.
+
+Key Observations:
+- A subtree can start at any node in the main tree.
+- Tree equality checking (same structure and values) is required.
+- Early stopping is possible once a match is found.
+
+Technique: Tree Traversal + Tree Comparison
+1. Traverse each node of the main tree
+2. At each node, compare the subtree with subRoot
+3. If identical, return True
+4. Otherwise, recursively search left and right subtrees
+
+Time Complexity:
+- O(n * m) in the worst case
+  where n = number of nodes in root
+  and m = number of nodes in subRoot
+
+Space Complexity:
+- O(h), where h is the height of the tree (recursion stack)
+"""
+
 from typing import Optional
 
 # Definition for a binary tree node.
