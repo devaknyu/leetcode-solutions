@@ -47,3 +47,20 @@ class Solution:
             self.isSame(r.left, s.left) and
             self.isSame(r.right, s.right)
         )
+
+# Example usage
+if __name__ == "__main__":
+    # Main tree
+    root = TreeNode(3,
+            TreeNode(4, TreeNode(1), TreeNode(2)),
+            TreeNode(5)
+        )
+
+    # Subtree
+    subRoot = TreeNode(4, TreeNode(1), TreeNode(2))
+
+    print(Solution().isSubtree(root, subRoot))  # Expected: True
+
+    # Non-subtree example
+    subRoot2 = TreeNode(4, TreeNode(1), TreeNode(2, TreeNode(0), None))
+    print(Solution().isSubtree(root, subRoot2))  # Expected: False
