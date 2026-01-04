@@ -32,3 +32,33 @@ class Solution:
             # Split point found — this is the LCA
             else:
                 return cur
+            
+# Example usage
+if __name__ == "__main__":
+    """
+        BST:
+              6
+             / \
+            2   8
+           / \ / \
+          0  4 7  9
+            / \
+           3   5
+    """
+
+    root = TreeNode(6)
+    root.left = TreeNode(2)
+    root.right = TreeNode(8)
+    root.left.left = TreeNode(0)
+    root.left.right = TreeNode(4)
+    root.left.right.left = TreeNode(3)
+    root.left.right.right = TreeNode(5)
+    root.right.left = TreeNode(7)
+    root.right.right = TreeNode(9)
+
+    p = root.left        # Node 2
+    q = root.left.right  # Node 4
+
+    lca = Solution().lowestCommonAncestor(root, p, q)
+    print(lca.val)  # Expected: 2
+
