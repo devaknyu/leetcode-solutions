@@ -1,3 +1,47 @@
+"""
+LeetCode 235: Lowest Common Ancestor of a Binary Search Tree
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+Problem Description:
+- Given a Binary Search Tree (BST) and two nodes p and q,
+  find their lowest common ancestor (LCA).
+- The LCA of two nodes p and q is defined as the lowest node
+  in the tree that has both p and q as descendants
+  (where a node can be a descendant of itself).
+
+BST Property:
+- Left subtree values < node value
+- Right subtree values > node value
+
+Approach:
+- Start from the root and traverse the tree iteratively.
+- Use the BST property to decide whether to move left or right:
+  - If both p and q are smaller than the current node,
+    the LCA lies in the left subtree.
+  - If both p and q are greater than the current node,
+    the LCA lies in the right subtree.
+  - Otherwise, the current node is the split point
+    and hence the LCA.
+
+Key Observations:
+- Since it is a BST, we do not need to explore both subtrees.
+- The first node where p and q diverge is the LCA.
+- Iterative traversal avoids recursion stack overhead.
+
+Technique: Iterative BST Traversal
+1. Initialize a pointer at the root
+2. Compare current node value with p and q
+3. Move left or right accordingly
+4. Return the node where paths diverge
+
+Time Complexity:
+- O(h), where h is the height of the BST
+  (O(log n) for balanced BST, O(n) for skewed BST)
+
+Space Complexity:
+- O(1), since the solution is iterative
+"""
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
