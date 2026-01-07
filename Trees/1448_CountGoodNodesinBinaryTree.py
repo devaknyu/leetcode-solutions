@@ -31,3 +31,25 @@ class Solution:
             return res
 
         return dfs(root, root.val)
+
+
+# Example usage
+if __name__ == "__main__":
+    """
+        Tree:
+            3
+           / \
+          1   4
+         /   / \
+        3   1   5
+    """
+
+    root = TreeNode(3)
+    root.left = TreeNode(1)
+    root.right = TreeNode(4)
+    root.left.left = TreeNode(3)
+    root.left.left = TreeNode(3)
+    root.right.left = TreeNode(1)
+    root.right.right = TreeNode(5)
+
+    print(Solution().goodNodes(root))  # Example Output
