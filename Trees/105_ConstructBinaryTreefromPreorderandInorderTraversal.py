@@ -39,3 +39,23 @@ class Solution:
         )
 
         return root
+
+# Example usage
+if __name__ == "__main__":
+    """
+        preorder = [3, 9, 20, 15, 7]
+        inorder  = [9, 3, 15, 20, 7]
+
+        Tree:
+            3
+           / \
+          9  20
+             / \
+            15  7
+    """
+
+    preorder = [3, 9, 20, 15, 7]
+    inorder = [9, 3, 15, 20, 7]
+
+    root = Solution().buildTree(preorder, inorder)
+    print(root.val)  # Expected: 3
