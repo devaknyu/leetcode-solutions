@@ -37,3 +37,24 @@ class Solution:
 
         dfs(root)
         return res[0]
+    
+# Example usage
+if __name__ == "__main__":
+    """
+        Tree:
+             -10
+             /  \
+            9   20
+               / \
+              15  7
+
+        Maximum Path Sum = 15 + 20 + 7 = 42
+    """
+
+    root = TreeNode(-10)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    root.right.left = TreeNode(15)
+    root.right.right = TreeNode(7)
+
+    print(Solution().maxPathSum(root))  # Expected: 42
