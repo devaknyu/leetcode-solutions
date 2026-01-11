@@ -1,3 +1,46 @@
+"""
+LeetCode 124: Binary Tree Maximum Path Sum
+https://leetcode.com/problems/binary-tree-maximum-path-sum/
+
+Problem Description:
+- Given the root of a binary tree,
+  return the maximum path sum.
+- A path can start and end at any node.
+- The path must contain at least one node.
+- The path does not need to pass through the root.
+
+Approach:
+- Use Depth-First Search (DFS) to compute path sums.
+- At each node:
+  - Compute the maximum gain from the left subtree.
+  - Compute the maximum gain from the right subtree.
+- Ignore negative gains since they reduce the total sum.
+- Update a global result to track the best path seen so far.
+
+Key Observations:
+- A path can go through a node using both left and right children.
+- However, when returning to the parent, only one side can be used.
+- Negative paths should be discarded (treated as 0).
+- A global variable is needed to track the maximum across all nodes.
+
+Technique: DFS with Global Maximum Tracking
+1. Perform DFS traversal
+2. For each node, compute left and right subtree gains
+3. Discard negative gains using max(0, gain)
+4. Update global maximum with:
+   node.val + leftGain + rightGain
+5. Return node.val + max(leftGain, rightGain) to parent
+
+Time Complexity:
+- O(n), where n is the number of nodes
+  (each node is visited once)
+
+Space Complexity:
+- O(h), where h is the height of the tree
+  (recursion stack)
+"""
+
+
 from typing import Optional
 
 # Definition for a binary tree node.
