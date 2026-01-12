@@ -47,3 +47,29 @@ class Codec:
             return node
 
         return dfs()
+
+# Example usage
+if __name__ == "__main__":
+    """
+        Tree:
+            1
+           / \
+          2   3
+             / \
+            4   5
+    """
+
+    root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.right = TreeNode(3)
+    root.right.left = TreeNode(4)
+    root.right.right = TreeNode(5)
+
+    ser = Codec()
+    deser = Codec()
+
+    data = ser.serialize(root)
+    print("Serialized:", data)
+
+    restored = deser.deserialize(data)
+    print("Restored Root:", restored.val)  # Expected: 1
