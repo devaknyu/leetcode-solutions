@@ -1,3 +1,46 @@
+"""
+LeetCode 297: Serialize and Deserialize Binary Tree
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+
+Problem Description:
+- Design an algorithm to serialize and deserialize a binary tree.
+- Serialization converts a binary tree into a string.
+- Deserialization reconstructs the binary tree from the string.
+- The encoded string must allow complete reconstruction of the tree.
+- There is no restriction on the format as long as it is reversible.
+
+Approach:
+- Use Depth-First Search (DFS) with preorder traversal.
+- While serializing:
+  - Record node values.
+  - Use a sentinel (e.g., "N") to represent null nodes.
+- While deserializing:
+  - Rebuild the tree by reading values sequentially.
+  - When a sentinel is encountered, return None.
+
+Key Observations:
+- Preorder traversal preserves root placement.
+- Explicitly storing null nodes is required to maintain structure.
+- A shared index allows correct reconstruction order.
+- The serialization format must match the deserialization logic.
+
+Technique: DFS Preorder Serialization
+1. Traverse the tree using preorder DFS
+2. Append node values to a list
+3. Append a sentinel for null nodes
+4. Join the list into a string
+5. During deserialization, read values in order
+6. Rebuild left and right subtrees recursively
+
+Time Complexity:
+- O(n), where n is the number of nodes
+  (each node is processed once)
+
+Space Complexity:
+- O(n), due to storage of serialized string
+  and recursion stack
+"""
+
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
