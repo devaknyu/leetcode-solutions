@@ -1,3 +1,50 @@
+"""
+LeetCode 211: Design Add and Search Words Data Structure
+https://leetcode.com/problems/design-add-and-search-words-data-structure/
+
+Problem Description:
+- Design a data structure that supports adding new words
+  and searching words with wildcard support.
+- The search function may contain the '.' character,
+  which can represent any single letter.
+- Operations required:
+  - addWord(word)
+  - search(word) with '.' wildcard support
+
+Approach:
+- Use a Trie (Prefix Tree) as the underlying data structure.
+- Insert words normally character by character.
+- For searching:
+  - Traverse the trie recursively using DFS.
+  - When encountering a '.', try all possible child paths.
+  - Continue recursively until the word is fully matched.
+
+Key Observations:
+- A Trie efficiently handles prefix-based word storage.
+- Wildcard '.' requires branching into multiple paths.
+- DFS allows exploration of all valid paths when wildcards appear.
+- Worst-case search time increases due to wildcard branching.
+
+Technique: Trie + DFS Backtracking
+1. Insert words into the Trie as usual
+2. For search:
+   - Traverse character by character
+   - If character is a letter, move to that child
+   - If character is '.', recursively search all children
+3. At the end of traversal, check if a word ends at that node
+
+Time Complexity:
+- addWord: O(L)
+- search:
+  - Best case: O(L)
+  - Worst case: O(26^L) (when word is all wildcards)
+  where L is the word length
+
+Space Complexity:
+- O(N), where N is the total number of characters stored
+  in the trie
+"""
+
 # Trie node definition
 class TrieNode:
     def __init__(self):
