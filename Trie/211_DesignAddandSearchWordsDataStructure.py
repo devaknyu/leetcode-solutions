@@ -53,3 +53,15 @@ class WordDictionary:
             return cur.word
 
         return dfs(0, self.root)
+
+# Example usage
+if __name__ == "__main__":
+    wd = WordDictionary()
+    wd.addWord("bad")
+    wd.addWord("dad")
+    wd.addWord("mad")
+
+    print(wd.search("pad"))  # False
+    print(wd.search("bad"))  # True
+    print(wd.search(".ad"))  # True
+    print(wd.search("b.."))  # True
