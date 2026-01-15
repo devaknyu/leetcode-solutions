@@ -63,3 +63,16 @@ class Solution:
                 dfs(r, c, root, "")
 
         return list(res)
+
+# Example usage
+if __name__ == "__main__":
+    board = [
+        ["o","a","a","n"],
+        ["e","t","a","e"],
+        ["i","h","k","r"],
+        ["i","f","l","v"]
+    ]
+    words = ["oath","pea","eat","rain"]
+
+    print(Solution().findWords(board, words))
+    # Expected: ["oath", "eat"]
