@@ -1,3 +1,48 @@
+"""
+LeetCode 212: Word Search II
+https://leetcode.com/problems/word-search-ii/
+
+Problem Description:
+- Given a 2D board of characters and a list of words,
+  return all words that can be formed by sequentially adjacent cells.
+- Adjacent cells are horizontally or vertically neighboring.
+- The same letter cell may not be used more than once per word.
+
+Approach:
+- Use a Trie to efficiently store all target words.
+- Perform DFS backtracking from each cell in the board.
+- Traverse the Trie simultaneously while exploring the board.
+- Stop exploring paths that do not match any Trie prefix.
+
+Key Observations:
+- Naively checking each word separately is inefficient.
+- Trie enables prefix pruning to drastically reduce search space.
+- DFS + backtracking ensures valid path construction.
+- Using a set avoids duplicate results.
+
+Technique: Trie + DFS Backtracking
+1. Insert all words into a Trie
+2. For each board cell:
+   - Start DFS if the character exists in Trie root
+3. During DFS:
+   - Check board bounds and visited cells
+   - Move through Trie children based on board characters
+   - Track visited cells to prevent reuse
+4. When reaching end-of-word, add result
+5. Backtrack by unmarking visited cells
+
+Time Complexity:
+- O(m × n × 4^L) in the worst case,
+  where:
+  - m × n is the board size
+  - L is the maximum word length
+
+Space Complexity:
+- O(N), where N is the total number of characters
+  stored in the Trie
+- Additional O(L) recursion stack for DFS
+"""
+
 from typing import List
 
 # Trie node definition
