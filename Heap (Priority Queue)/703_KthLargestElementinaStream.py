@@ -1,3 +1,47 @@
+"""
+LeetCode 703: Kth Largest Element in a Stream
+https://leetcode.com/problems/kth-largest-element-in-a-stream/
+
+Problem Description:
+- Design a class to find the kth largest element in a stream of integers.
+- The class should support:
+  1. Initializing with an integer k and a list of numbers.
+  2. Adding new values to the stream.
+- After each addition, return the kth largest element among all elements seen so far.
+
+Approach:
+- Use a Min Heap of size k to track the k largest elements.
+- The smallest element in the heap will always represent the kth largest value.
+- This avoids sorting the entire stream after each insertion.
+
+Key Observations:
+- Keeping all elements is unnecessary and inefficient.
+- A min heap of size k ensures:
+  - Heap always contains the k largest elements seen so far.
+  - The root of the heap is the kth largest element.
+- If heap size exceeds k, remove the smallest element.
+
+Technique: Min Heap
+1. Initialize the heap using the given list of numbers.
+2. Convert the list into a heap using heapify.
+3. Remove elements until heap size is exactly k.
+4. For each new value:
+   - Push it into the heap.
+   - If heap size exceeds k, pop the smallest element.
+   - Return the heap root.
+
+Time Complexity:
+- Initialization:
+  - O(n) for heapify
+  - O(n log k) for trimming heap to size k
+- Add operation:
+  - O(log k)
+
+Space Complexity:
+- O(k), since the heap stores only k elements
+"""
+
+
 from typing import List
 import heapq
 
