@@ -21,3 +21,16 @@ class Solution:
         stones.append(0)
 
         return abs(stones[0])
+
+if __name__ == "__main__":
+    # Example 1
+    stones = [2, 7, 4, 1, 8, 1]
+    print(Solution().lastStoneWeight(stones))  # Expected: 1
+
+    # Example 2
+    stones = [1]
+    print(Solution().lastStoneWeight(stones))  # Expected: 1
+
+    # Example 3 (All stones destroyed)
+    stones = [1, 1]
+    print(Solution().lastStoneWeight(stones))  # Expected: 0
