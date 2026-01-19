@@ -1,3 +1,46 @@
+"""
+LeetCode 215: Kth Largest Element in an Array
+https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+Problem Description:
+- Given an integer array nums and an integer k,
+  return the kth largest element in the array.
+- The array does not need to be fully sorted.
+
+Approach:
+- Use the Quickselect algorithm, which is based on Quicksort.
+- Instead of sorting the entire array, Quickselect
+  only processes the portion of the array that contains
+  the kth largest element.
+- Convert the problem into finding the (n - k)th smallest element.
+
+Key Observations:
+- Full sorting would take O(n log n), which is unnecessary.
+- Quickselect has an average time complexity of O(n).
+- The pivot partitions the array such that:
+  - Elements ≤ pivot are on the left
+  - Elements > pivot are on the right
+- Recursion continues only on the side containing the target index.
+
+Technique: Quickselect (Partition-Based Selection)
+1. Convert kth largest into index (n - k).
+2. Choose a pivot (rightmost element).
+3. Partition the array around the pivot.
+4. Compare pivot index with target index:
+   - If equal, return pivot.
+   - If larger, recurse left.
+   - If smaller, recurse right.
+
+Time Complexity:
+- Average Case: O(n)
+- Worst Case: O(n²) (rare, occurs with poor pivot choices)
+
+Space Complexity:
+- O(1) extra space (in-place)
+- O(n) recursion stack in worst case
+"""
+
+
 from typing import List
 
 
