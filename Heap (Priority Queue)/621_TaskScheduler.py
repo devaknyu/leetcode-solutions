@@ -28,3 +28,19 @@ class Solution:
                 heapq.heappush(maxHeap, q.popleft()[0])
 
         return time
+
+if __name__ == "__main__":
+    # Example 1
+    tasks = ["A", "A", "A", "B", "B", "B"]
+    n = 2
+    print(Solution().leastInterval(tasks, n))  # Expected: 8
+
+    # Example 2
+    tasks = ["A", "A", "A", "B", "B", "B"]
+    n = 0
+    print(Solution().leastInterval(tasks, n))  # Expected: 6
+
+    # Example 3
+    tasks = ["A", "A", "A", "A", "B", "B", "C", "C"]
+    n = 2
+    print(Solution().leastInterval(tasks, n))  # Expected: 10
