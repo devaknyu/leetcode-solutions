@@ -48,3 +48,16 @@ class Twitter:
     def unfollow(self, followerId: int, followeeId: int) -> None:
         if followeeId in self.followMap[followerId]:
             self.followMap[followerId].remove(followeeId)
+
+if __name__ == "__main__":
+    twitter = Twitter()
+
+    twitter.postTweet(1, 5)
+    print(twitter.getNewsFeed(1))  # Expected: [5]
+
+    twitter.follow(1, 2)
+    twitter.postTweet(2, 6)
+    print(twitter.getNewsFeed(1))  # Expected: [6, 5]
+
+    twitter.unfollow(1, 2)
+    print(twitter.getNewsFeed(1))  # Expected: [5]
