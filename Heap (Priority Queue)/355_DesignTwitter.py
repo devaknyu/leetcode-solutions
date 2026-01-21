@@ -1,3 +1,50 @@
+"""
+LeetCode 355: Design Twitter
+https://leetcode.com/problems/design-twitter/
+
+Problem Description:
+- Design a simplified Twitter system that supports:
+  1. Posting tweets.
+  2. Following and unfollowing users.
+  3. Retrieving the 10 most recent tweets in a user's news feed.
+- Each tweet is associated with a unique tweetId.
+- Tweets must be returned in reverse chronological order.
+
+Approach:
+- Assign each tweet a timestamp using a global counter.
+- Store tweets per user as (timestamp, tweetId).
+- Maintain a follow map to track follow relationships.
+- Use a Min Heap to efficiently merge tweets from multiple users
+  when generating the news feed.
+
+Key Observations:
+- Only the 10 most recent tweets are needed.
+- Each user’s tweets are already sorted by time.
+- This problem reduces to merging multiple sorted lists.
+- A heap allows efficient k-way merge.
+
+Technique: Heap + Hash Maps (K-Way Merge)
+1. Use a counter to timestamp tweets.
+2. Store each user's tweets in a list.
+3. Track follow relationships using a set.
+4. When generating the feed:
+   - Add the most recent tweet of each followed user to a heap.
+   - Pop the most recent tweet and push the next older tweet
+     from the same user.
+5. Stop once 10 tweets are collected.
+
+Time Complexity:
+- postTweet: O(1)
+- follow / unfollow: O(1)
+- getNewsFeed: O(F log F)
+  where F is the number of followed users (including self)
+
+Space Complexity:
+- O(U + T)
+  where U is the number of users and T is the number of tweets
+"""
+
+
 from typing import List
 from collections import defaultdict
 import heapq
