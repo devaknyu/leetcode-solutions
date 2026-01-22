@@ -36,3 +36,13 @@ class MedianFinder:
 
         # Even count
         return (-self.small[0] + self.large[0]) / 2
+
+if __name__ == "__main__":
+    mf = MedianFinder()
+
+    mf.addNum(1)
+    mf.addNum(2)
+    print(mf.findMedian())  # Expected: 1.5
+
+    mf.addNum(3)
+    print(mf.findMedian())  # Expected: 2.0
