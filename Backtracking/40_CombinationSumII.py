@@ -32,3 +32,9 @@ class Solution:
 
         dfs(0, [], 0)
         return res
+
+
+if __name__ == "__main__":
+    candidates = [10, 1, 2, 7, 6, 1, 5]
+    target = 8
+    print(Solution().combinationSum2(candidates, target))
