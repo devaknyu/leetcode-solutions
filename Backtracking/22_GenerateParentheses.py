@@ -26,3 +26,7 @@ class Solution:
 
         backtrack(0, 0)
         return res
+
+if __name__ == "__main__":
+    n = 3
+    print(Solution().generateParenthesis(n))
