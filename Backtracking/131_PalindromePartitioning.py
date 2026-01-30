@@ -30,3 +30,8 @@ class Solution:
             l += 1
             r -= 1
         return True
+
+
+if __name__ == "__main__":
+    s = "aab"
+    print(Solution().partition(s))
