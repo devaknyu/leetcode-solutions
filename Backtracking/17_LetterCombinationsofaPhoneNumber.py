@@ -30,3 +30,7 @@ class Solution:
             backtrack(0, "")
 
         return res
+
+if __name__ == "__main__":
+    digits = "23"
+    print(Solution().letterCombinations(digits))
