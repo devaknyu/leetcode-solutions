@@ -38,3 +38,7 @@ class Solution:
 
         backtrack(0)
         return res
+
+if __name__ == "__main__":
+    n = 4
+    print(Solution().solveNQueens(n))
