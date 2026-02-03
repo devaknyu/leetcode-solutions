@@ -34,3 +34,11 @@ class Solution:
 
         return area
 
+if __name__ == "__main__":
+    grid = [
+        [0,0,1,0,0],
+        [0,1,1,1,0],
+        [0,0,1,0,0],
+        [1,1,0,0,0]
+    ]
+    print(Solution().maxAreaOfIsland(grid))
