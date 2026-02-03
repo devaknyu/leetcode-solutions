@@ -39,3 +39,12 @@ class Solution:
                     island += 1
 
         return island
+
+if __name__ == "__main__":
+    grid = [
+        ["1","1","0","0","0"],
+        ["1","1","0","0","0"],
+        ["0","0","1","0","0"],
+        ["0","0","0","1","1"]
+    ]
+    print(Solution().numIslands(grid))
