@@ -28,3 +28,7 @@ class Solution:
             return copy
 
         return dfs(node) if node else None
+
+if __name__ == "__main__":
+    # Example usage would require graph construction
+    pass
