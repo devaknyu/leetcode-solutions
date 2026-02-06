@@ -1,3 +1,29 @@
+"""
+Example:
+grid = [
+  [INF, -1,  0, INF],
+  [INF, INF, INF, -1],
+  [INF, -1, INF, -1],
+  [0,   -1, INF, INF]
+]
+
+Output:
+[
+  [3, -1, 0, 1],
+  [2, 2, 1, -1],
+  [1, -1, 2, -1],
+  [0, -1, 3, 4]
+]
+
+Time Complexity:
+- O(m × n)
+  - Each cell is visited at most once
+
+Space Complexity:
+- O(m × n)
+  - Queue and visited set in the worst case
+"""
+
 from typing import List
 import collections
 
