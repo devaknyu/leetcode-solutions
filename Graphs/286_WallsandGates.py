@@ -1,4 +1,37 @@
 """
+LeetCode 286: Walls and Gates (Islands and Treasure)
+https://leetcode.com/problems/walls-and-gates/
+
+Problem Description:
+- You are given an m x n grid rooms where:
+  - -1 represents a wall
+  - 0 represents a gate (treasure)
+  - INF (or a large value) represents an empty room
+- Fill each empty room with the distance to its nearest gate.
+- If it is impossible to reach a gate, leave the room unchanged.
+- The grid must be modified in-place.
+
+Approach:
+- Use multi-source Breadth-First Search (BFS).
+- Treat all gates (0s) as starting points in the BFS.
+- Expand outward level by level, updating distances as we go.
+- Use a visited set to avoid revisiting cells.
+
+Key Observations:
+- BFS guarantees the shortest distance in an unweighted grid.
+- Starting BFS from all gates simultaneously ensures each room
+  gets the distance to its nearest gate.
+- Walls (-1) block traversal.
+- Each cell is processed at most once.
+
+Technique: Multi-Source BFS (Grid)
+1. Add all gate positions (cells with value 0) to the queue.
+2. Mark these positions as visited.
+3. Perform BFS level by level:
+   - For each cell in the current layer, update its distance.
+   - Add all valid neighboring rooms to the queue.
+4. Increment distance after finishing each BFS level.
+
 Example:
 grid = [
   [INF, -1,  0, INF],
