@@ -1,3 +1,27 @@
+"""
+LeetCode 994: Rotting Oranges
+https://leetcode.com/problems/rotting-oranges/
+
+Approach:
+- Use Breadth-First Search (BFS) to simulate the rotting process minute by minute
+- Treat all initially rotten oranges as starting points (multi-source BFS)
+- Each BFS level represents one unit of time
+- Fresh oranges adjacent to rotten ones become rotten
+
+Technique: Multi-Source BFS (Level Order Traversal)
+1. Count all fresh oranges and enqueue all rotten oranges initially
+2. Perform BFS layer by layer (each layer = 1 minute)
+3. For each rotten orange, rot its 4-directionally adjacent fresh neighbors
+4. Decrease fresh count as oranges rot
+5. If all fresh oranges rot, return time; otherwise return -1
+
+Time Complexity: O(m * n)
+- Each cell is processed at most once
+
+Space Complexity: O(m * n)
+- Queue can hold all cells in the worst case
+"""
+
 from typing import List
 import collections
 
