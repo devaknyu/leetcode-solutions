@@ -36,3 +36,16 @@ class Solution:
             time += 1
 
         return time if fresh == 0 else -1
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        ([[2,1,1],[1,1,0],[0,1,1]], 4),
+        ([[2,1,1],[0,1,1],[1,0,1]], -1),
+        ([[0,2]], 0),
+    ]
+
+    for grid, expected in test_cases:
+        print(f"Output: {sol.orangesRotting(grid)} | Expected: {expected}")
