@@ -1,3 +1,29 @@
+"""
+LeetCode 417: Pacific Atlantic Water Flow
+https://leetcode.com/problems/pacific-atlantic-water-flow/
+
+Approach:
+- Instead of simulating water flowing from every cell to the oceans,
+  reverse the logic and simulate flow *from the oceans inward*
+- A cell can reach an ocean if water can flow from that ocean to the cell
+- Perform DFS from Pacific-border cells and Atlantic-border cells
+- Cells reachable from both oceans are part of the answer
+
+Technique: Reverse DFS from Multiple Sources
+1. Create two visited sets: pacific-reachable and atlantic-reachable
+2. Start DFS from all Pacific-border cells (top row, left column)
+3. Start DFS from all Atlantic-border cells (bottom row, right column)
+4. During DFS, only move to neighbors with height >= previous cell
+   (reverse of water flowing downhill)
+5. Intersection of both visited sets gives the result
+
+Time Complexity: O(m * n)
+- Each cell is visited at most once for Pacific and once for Atlantic
+
+Space Complexity: O(m * n)
+- Visited sets + recursion stack
+"""
+
 from typing import List
 
 class Solution:
