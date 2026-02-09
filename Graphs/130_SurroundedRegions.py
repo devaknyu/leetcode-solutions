@@ -41,3 +41,24 @@ class Solution:
             for c in range(COLS):
                 if board[r][c] == "T":
                     board[r][c] = "O"
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    board = [
+        ["X","X","X","X"],
+        ["X","O","O","X"],
+        ["X","X","O","X"],
+        ["X","O","X","X"]
+    ]
+
+    print("Before:")
+    for row in board:
+        print(row)
+
+    sol.solve(board)
+
+    print("\nAfter:")
+    for row in board:
+        print(row)
