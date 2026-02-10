@@ -1,3 +1,28 @@
+"""
+LeetCode 207: Course Schedule
+https://leetcode.com/problems/course-schedule/
+
+Approach:
+- Model courses as a directed graph where an edge points from a course
+  to its prerequisite
+- The problem reduces to checking whether the graph contains a cycle
+- If a cycle exists, it is impossible to finish all courses
+
+Technique: DFS Cycle Detection (Directed Graph)
+1. Build adjacency list mapping each course to its prerequisites
+2. Use DFS to traverse prerequisite chains
+3. Maintain a `visiting` set to track nodes in the current DFS path
+4. If a node is revisited while in `visiting`, a cycle is detected
+5. After processing a course, clear its prerequisites (memoization)
+
+Time Complexity: O(V + E)
+- V = number of courses
+- E = number of prerequisite pairs
+
+Space Complexity: O(V + E)
+- Adjacency list + recursion stack + visiting set
+"""
+
 from typing import List
 
 class Solution:
