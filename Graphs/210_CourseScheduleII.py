@@ -31,3 +31,18 @@ class Solution:
                 return []
 
         return result
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        (2, [[1, 0]]),                     # [0,1]
+        (4, [[1,0],[2,0],[3,1],[3,2]]),    # One valid: [0,1,2,3] or [0,2,1,3]
+        (2, [[1,0],[0,1]]),                # Cycle → []
+    ]
+
+    for numCourses, prereqs in test_cases:
+        result = sol.findOrder(numCourses, prereqs)
+        print(f"numCourses={numCourses}, prerequisites={prereqs}")
+        print(f"Output: {result}\n")
