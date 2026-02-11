@@ -1,3 +1,31 @@
+"""
+LeetCode 210: Course Schedule II
+https://leetcode.com/problems/course-schedule-ii/
+
+Approach:
+- Model courses as a directed graph where edges point from a course
+  to its prerequisite
+- We need to return a valid ordering of courses
+- If a cycle exists, no valid ordering is possible
+- Use DFS with cycle detection to perform Topological Sort
+
+Technique: DFS Topological Sort with Cycle Detection
+1. Build adjacency list mapping each course to its prerequisites
+2. Use DFS to traverse prerequisite chains
+3. Maintain:
+   - `cycle` set → tracks nodes in current DFS path (detect cycles)
+   - `visit` set → tracks fully processed nodes
+4. If a cycle is detected, return empty list
+5. Add course to result AFTER exploring prerequisites (postorder)
+
+Time Complexity: O(V + E)
+- V = number of courses
+- E = number of prerequisite pairs
+
+Space Complexity: O(V + E)
+- Adjacency list + recursion stack + sets
+"""
+
 from typing import List
 
 class Solution:
