@@ -1,3 +1,30 @@
+"""
+LeetCode 261: Graph Valid Tree
+https://leetcode.com/problems/graph-valid-tree/
+
+Approach:
+- A valid tree must satisfy TWO conditions:
+  1) No cycles
+  2) Fully connected (all nodes reachable)
+- Since the graph is undirected, we use DFS with a `prev` parameter
+  to avoid treating the parent edge as a cycle
+- After DFS, verify that all nodes were visited
+
+Technique: DFS Cycle Detection in Undirected Graph
+1. Build adjacency list for the undirected graph
+2. Use DFS starting from node 0
+3. Track visited nodes
+4. If we revisit a node (excluding parent), a cycle exists
+5. After DFS, ensure all nodes were visited (connected)
+
+Time Complexity: O(V + E)
+- V = number of nodes
+- E = number of edges
+
+Space Complexity: O(V + E)
+- Adjacency list + recursion stack + visited set
+"""
+
 from typing import List
 
 class Solution:
