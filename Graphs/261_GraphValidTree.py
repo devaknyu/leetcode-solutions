@@ -29,3 +29,18 @@ class Solution:
 
         # Must have no cycles AND be fully connected
         return dfs(0, -1) and n == len(visit)
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        (5, [[0,1],[0,2],[0,3],[1,4]]),        # True
+        (5, [[0,1],[1,2],[2,3],[1,3],[1,4]]),  # False (cycle)
+        (4, [[0,1],[2,3]]),                    # False (disconnected)
+    ]
+
+    for n, edges in test_cases:
+        result = sol.validTree(n, edges)
+        print(f"n={n}, edges={edges}")
+        print(f"Output: {result}\n")
