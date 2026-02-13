@@ -35,3 +35,18 @@ class Solution:
             components -= union(n1, n2)
 
         return components
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        (5, [[0,1],[1,2],[3,4]]),   # 2 components
+        (5, [[0,1],[1,2],[2,3],[3,4]]),  # 1 component
+        (4, []),  # 4 components (no edges)
+    ]
+
+    for n, edges in test_cases:
+        result = sol.countComponents(n, edges)
+        print(f"n={n}, edges={edges}")
+        print(f"Output: {result}\n")
