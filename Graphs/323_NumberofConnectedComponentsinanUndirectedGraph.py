@@ -1,3 +1,27 @@
+"""
+LeetCode 323: Number of Connected Components in an Undirected Graph
+https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+
+Approach:
+- Initially, each node is its own connected component
+- Use Union-Find (Disjoint Set Union) to merge connected nodes
+- Every successful union reduces the number of components by 1
+- Final count represents total connected components
+
+Technique: Union-Find (Path Compression + Union by Rank)
+1. Initialize each node as its own parent
+2. For each edge, union the two nodes
+3. If union succeeds (different parents), decrease component count
+4. Return remaining component count
+
+Time Complexity: O(E * α(N))
+- α(N) = Inverse Ackermann function (almost constant)
+- Nearly linear in practice
+
+Space Complexity: O(N)
+- Parent and rank arrays
+"""
+
 from typing import List
 
 class Solution:
