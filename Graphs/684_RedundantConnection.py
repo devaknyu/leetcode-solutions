@@ -1,3 +1,28 @@
+"""
+LeetCode 684: Redundant Connection
+https://leetcode.com/problems/redundant-connection/
+
+Approach:
+- The graph started as a tree (n nodes, n-1 edges)
+- One extra edge was added, creating exactly one cycle
+- We must return the edge that creates the cycle
+- Use Union-Find to detect when two nodes are already connected
+
+Technique: Union-Find (Cycle Detection in Undirected Graph)
+1. Initialize each node as its own parent
+2. For each edge:
+   - If both nodes already share the same parent → cycle found
+   - Otherwise, union them
+3. The first edge that fails union is the redundant edge
+
+Time Complexity: O(N * α(N))
+- Nearly linear time
+- α(N) = inverse Ackermann (almost constant)
+
+Space Complexity: O(N)
+- Parent and rank arrays
+"""
+
 from typing import List
 
 class Solution:
