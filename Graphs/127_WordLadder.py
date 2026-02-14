@@ -47,3 +47,17 @@ class Solution:
                         q.append(nei)
 
         return 0
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        ("hit", "cog", ["hot","dot","dog","lot","log","cog"]),  # 5
+        ("hit", "cog", ["hot","dot","dog","lot","log"]),        # 0
+    ]
+
+    for begin, end, words in test_cases:
+        result = sol.ladderLength(begin, end, words)
+        print(f"beginWord={begin}, endWord={end}")
+        print(f"Output: {result}\n")
