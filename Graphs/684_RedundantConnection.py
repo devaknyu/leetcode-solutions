@@ -34,3 +34,17 @@ class Solution:
         for n1, n2 in edges:
             if not union(n1, n2):
                 return [n1, n2]
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+
+    test_cases = [
+        [[1,2],[1,3],[2,3]],              # → [2,3]
+        [[1,2],[2,3],[3,4],[1,4],[1,5]],  # → [1,4]
+    ]
+
+    for edges in test_cases:
+        result = sol.findRedundantConnection(edges)
+        print(f"edges={edges}")
+        print(f"Output: {result}\n")
