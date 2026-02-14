@@ -1,3 +1,29 @@
+"""
+LeetCode 127: Word Ladder
+https://leetcode.com/problems/word-ladder/
+
+Approach:
+- Treat each word as a node in a graph
+- Two words are connected if they differ by exactly one character
+- Build adjacency list connecting such words
+- Perform BFS from words reachable in one step from beginWord
+- Return the shortest transformation length
+
+Technique: BFS on Unweighted Graph
+1. Build graph where edges connect words differing by 1 character
+2. Use BFS to find shortest path to endWord
+3. Track visited nodes to prevent revisiting
+4. BFS level represents transformation length
+
+Time Complexity: O(n² * m)
+- n = number of words
+- m = word length
+- Comparing every pair of words
+
+Space Complexity: O(n²)
+- Adjacency list in worst case
+"""
+
 from typing import List
 from collections import deque
 
