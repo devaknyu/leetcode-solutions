@@ -3,23 +3,25 @@ LeetCode 70: Climbing Stairs
 https://leetcode.com/problems/climbing-stairs/
 
 Approach:
-- You are climbing a staircase with `n` steps.
-- Each time, you can climb either **1 step** or **2 steps**.
-- The goal is to find the total number of distinct ways to reach the top.
-- This is a **Fibonacci-like problem**, because:
-  - To reach step `n`, you can come from step `n-1` (taking 1 step) or step `n-2` (taking 2 steps).
-  - So, `ways(n) = ways(n-1) + ways(n-2)`
-- Use two variables (`one`, `two`) to store the previous two computed values:
-  - `one` → number of ways to reach the current step.
-  - `two` → number of ways to reach the previous step.
-- Iterate `n-1` times and update the values iteratively to avoid recursion and extra space.
+- At each step, you can climb either 1 or 2 steps
+- To reach step n:
+    ways(n) = ways(n-1) + ways(n-2)
+- This forms a Fibonacci-like recurrence
+- Use iterative DP with constant space
 
-Example:
-n = 2 → [ (1+1), (2) ] → 2  
-n = 3 → [ (1+1+1), (1+2), (2+1) ] → 3  
+Technique: Bottom-Up Dynamic Programming (Fibonacci Pattern)
+1. Base cases:
+   - 1 step → 1 way
+   - 2 steps → 2 ways
+2. For each step i:
+   - ways(i) = ways(i-1) + ways(i-2)
+3. Use two variables to store previous two results
 
 Time Complexity: O(n)
+- Single pass loop
+
 Space Complexity: O(1)
+- Only two variables used
 """
 
 class Solution:
