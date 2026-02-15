@@ -37,6 +37,9 @@ class Solution:
 # Example usage
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.climbStairs(2))  # Expected output: 2
-    print(sol.climbStairs(3))  # Expected output: 3
-    print(sol.climbStairs(5))  # Expected output: 8
+
+    test_cases = [1, 2, 3, 4, 5]
+
+    for n in test_cases:
+        result = sol.climbStairs(n)
+        print(f"n={n} → {result}")
