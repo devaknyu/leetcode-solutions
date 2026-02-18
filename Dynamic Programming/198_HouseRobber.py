@@ -15,3 +15,5 @@ if __name__ == "__main__":
     sol = Solution()
     print(sol.rob([1, 2, 3, 1]))      # Expected output: 4
     print(sol.rob([2, 7, 9, 3, 1]))   # Expected output: 12
+
+    
