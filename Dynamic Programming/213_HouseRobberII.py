@@ -82,3 +82,10 @@ class Solution:
             helper(nums[1:]),   # Exclude first house
             helper(nums[:-1])   # Exclude last house
         )
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.rob([2, 3, 2]))      # Expected output: 3
+    print(sol.rob([1, 2, 3, 1]))   # Expected output: 4
+    print(sol.rob([1]))            # Expected output: 1
