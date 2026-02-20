@@ -24,3 +24,9 @@ class Solution:
                 r += 1
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.longestPalindrome("babad"))  # Expected: "bab" or "aba"
+    print(sol.longestPalindrome("cbbd"))   # Expected: "bb"
