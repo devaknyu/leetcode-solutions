@@ -14,3 +14,9 @@ class Solution:
             res += countPal(s, i, i + 1)  # Even-length
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.countSubstrings("abc"))  # Expected: 3
+    print(sol.countSubstrings("aaa"))  # Expected: 6
