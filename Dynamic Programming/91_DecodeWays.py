@@ -18,3 +18,10 @@ class Solution:
                 dp[i] += dp[i + 2]
 
         return dp[0]
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.numDecodings("12"))   # Expected: 2
+    print(sol.numDecodings("226"))  # Expected: 3
+    print(sol.numDecodings("06"))   # Expected: 0
