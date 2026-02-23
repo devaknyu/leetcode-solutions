@@ -10,3 +10,9 @@ class Solution:
                     dp[a] = min(dp[a], 1 + dp[a - c])
 
         return dp[amount] if dp[amount] != amount + 1 else -1
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.coinChange([1, 2, 5], 11))  # Expected: 3
+    print(sol.coinChange([2], 3))        # Expected: -1
