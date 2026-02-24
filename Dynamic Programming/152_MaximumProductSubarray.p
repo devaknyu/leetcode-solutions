@@ -10,3 +10,10 @@ class Solution:
             res = max(res, numMax)
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxProduct([2, 3, -2, 4]))  # Expected: 6
+    print(sol.maxProduct([-2, 0, -1]))    # Expected: 0
+    print(sol.maxProduct([-2, 3, -4]))    # Expected: 24
