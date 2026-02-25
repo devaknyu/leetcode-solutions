@@ -12,3 +12,9 @@ class Solution:
                     break
 
         return dp[0]
+    
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.wordBreak("leetcode", ["leet", "code"]))  # Expected: True
+    print(sol.wordBreak("catsandog", ["cats", "dog", "sand", "and", "cat"]))  # Expected: Fal
