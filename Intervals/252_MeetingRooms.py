@@ -15,3 +15,7 @@ class Solution:
                 return False
 
         return True
+
+sol = Solution()
+print(sol.canAttendMeetings([Interval(0,30), Interval(5,10), Interval(15,20)]))
+Expected: False
