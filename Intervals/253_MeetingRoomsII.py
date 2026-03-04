@@ -4,7 +4,7 @@ class Interval(object):
     def __init__(self, start, end):
         self.start = start
         self.end = end
-        
+
 class Solution:
     def minMeetingRooms(self, intervals: List[Interval]) -> int:
         if not intervals:
@@ -27,3 +27,7 @@ class Solution:
             res = max(res, cur)
 
         return res
+
+sol = Solution()
+intervals = [Interval(0,30), Interval(5,10), Interval(15,20)]
+print(sol.minMeetingRooms(intervals))  # Expected: 2
