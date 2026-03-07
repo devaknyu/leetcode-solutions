@@ -15,3 +15,10 @@ class Solution:
             res += 1
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.jump([2,3,1,1,4]))  # Expected: 2
+    print(sol.jump([2,3,0,1,4]))  # Expected: 2
+    print(sol.jump([1,1,1,1]))    # Expected: 3
