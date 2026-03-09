@@ -28,3 +28,10 @@ class Solution:
                     heapq.heappop(minH)
 
         return True
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isNStraightHand([1,2,3,6,2,3,4,7,8], 3))  # Expected: True
+    print(sol.isNStraightHand([1,2,3,4,5], 4))          # Expected: False
+    print(sol.isNStraightHand([1,2,3,4], 2))            # Expected: True
