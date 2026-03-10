@@ -12,3 +12,9 @@ class Solution:
                     good.add(i)
 
         return len(good) == 3
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.mergeTriplets([[2,5,3],[1,8,4],[1,7,5]], [2,7,5]))  # Expected: True
+    print(sol.mergeTriplets([[3,4,5],[4,5,6]], [3,2,5]))          # Expected: False
