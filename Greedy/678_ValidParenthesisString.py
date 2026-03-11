@@ -22,3 +22,11 @@ class Solution:
                 leftMin = 0
 
         return leftMin == 0
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.checkValidString("()"))    # Expected: True
+    print(sol.checkValidString("(*)"))   # Expected: True
+    print(sol.checkValidString("(*))"))  # Expected: True
+    print(sol.checkValidString("(((*)")) # Expected: False
