@@ -12,3 +12,18 @@ class Solution:
             res += 1
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        (11, 3),   # 1011
+        (128, 1),  # 10000000
+        (2147483645, 30)
+    ]
+
+    for n, expected in test_cases:
+        result = solution.hammingWeight(n)
+        status = "✓" if result == expected else "✗"
+        print(f"n = {n} → set bits = {result} (Expected: {expected}) {status}")
