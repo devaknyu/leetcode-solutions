@@ -20,3 +20,18 @@ class Solution:
             dp[i] = 1 + dp[i - offset]
 
         return dp
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        (2, [0, 1, 1]),
+        (5, [0, 1, 1, 2, 1, 2]),
+        (0, [0]),
+    ]
+
+    for n, expected in test_cases:
+        result = solution.countBits(n)
+        status = "✓" if result == expected else "✗"
+        print(f"n = {n} → {result} (Expected: {expected}) {status}")
