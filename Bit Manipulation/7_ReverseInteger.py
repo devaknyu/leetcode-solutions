@@ -33,3 +33,20 @@ class Solution:
             res = (res * 10) + digit
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        (123, 321),
+        (-123, -321),
+        (120, 21),
+        (0, 0),
+        (1534236469, 0),  # overflow case
+    ]
+
+    for x, expected in test_cases:
+        result = solution.reverse(x)
+        status = "✓" if result == expected else "✗"
+        print(f"x = {x} → reversed = {result} (Expected: {expected}) {status}")
