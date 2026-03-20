@@ -21,3 +21,19 @@ class Solution:
 
         return row[0]
 
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        (3, 7, 28),
+        (3, 3, 6),
+        (1, 5, 1),
+        (5, 1, 1),
+    ]
+
+    for m, n, expected in test_cases:
+        result = solution.uniquePaths(m, n)
+        status = "✓" if result == expected else "✗"
+        print(f"m = {m}, n = {n} → paths = {result} (Expected: {expected}) {status}")
+
