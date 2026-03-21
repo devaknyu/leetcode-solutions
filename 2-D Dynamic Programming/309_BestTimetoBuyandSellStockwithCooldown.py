@@ -37,3 +37,19 @@ class Solution:
             return dp[(i, buying)]
 
         return dfs(0, True)
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        ([1,2,3,0,2], 3),
+        ([1], 0),
+        ([2,1,4], 3),
+        ([6,1,3,2,4,7], 6),
+    ]
+
+    for prices, expected in test_cases:
+        result = solution.maxProfit(prices)
+        status = "✓" if result == expected else "✗"
+        print(f"prices = {prices} → profit = {result} (Expected: {expected}) {status}")
