@@ -30,3 +30,19 @@ class Solution:
             n = n // 10
 
         return output
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        (19, True),
+        (2, False),
+        (1, True),
+        (7, True),
+    ]
+
+    for n, expected in test_cases:
+        result = solution.isHappy(n)
+        status = "✓" if result == expected else "✗"
+        print(f"n = {n} → isHappy = {result} (Expected: {expected}) {status}")
