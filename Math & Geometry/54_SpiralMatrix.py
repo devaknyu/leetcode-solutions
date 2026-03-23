@@ -1,3 +1,75 @@
+"""
+LeetCode 54: Spiral Matrix
+https://leetcode.com/problems/spiral-matrix/
+
+Approach:
+- We are given an m x n matrix.
+- The goal is to return all elements in **spiral order**.
+
+Spiral traversal order:
+→ left to right (top row)
+↓ top to bottom (right column)
+← right to left (bottom row)
+↑ bottom to top (left column)
+
+Repeat while shrinking boundaries.
+
+Key Observations:
+- We maintain four boundaries:
+    l (left), r (right)
+    top, bottom
+
+- After traversing one side, we shrink the corresponding boundary.
+- We must check boundaries carefully to avoid duplicate traversals.
+
+Example:
+
+matrix = [
+ [1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]
+]
+
+Spiral Order:
+[1,2,3,6,9,8,7,4,5]
+
+Technique: Matrix Traversal (Boundary Simulation)
+
+Algorithm:
+1. Initialize:
+   - l = 0, r = number of columns
+   - top = 0, bottom = number of rows
+   - result list
+
+2. While l < r and top < bottom:
+   a. Traverse top row (left → right)
+   b. Move top boundary down
+
+   c. Traverse right column (top → bottom)
+   d. Move right boundary left
+
+   e. Check if boundaries still valid
+
+   f. Traverse bottom row (right → left)
+   g. Move bottom boundary up
+
+   h. Traverse left column (bottom → top)
+   i. Move left boundary right
+
+3. Return result
+
+Why boundary check is needed:
+- Prevents re-traversing rows/columns in single row/column cases
+
+Time Complexity:
+- Each element is visited once
+- Time Complexity: O(m * n)
+
+Space Complexity:
+- Output list
+- Space Complexity: O(1) extra (excluding result)
+"""
+
 class Solution:
     def spiralOrder(self, matrix):
         """
