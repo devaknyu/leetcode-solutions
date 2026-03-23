@@ -36,3 +36,24 @@ class Solution:
             l += 1
 
         return res
+
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        ([[1,2,3],[4,5,6],[7,8,9]],
+         [1,2,3,6,9,8,7,4,5]),
+
+        ([[1,2,3,4],[5,6,7,8],[9,10,11,12]],
+         [1,2,3,4,8,12,11,10,9,5,6,7]),
+
+        ([[1]],
+         [1]),
+    ]
+
+    for matrix, expected in test_cases:
+        result = solution.spiralOrder(matrix)
+        status = "✓" if result == expected else "✗"
+        print(f"matrix = {matrix} → spiral = {result} (Expected: {expected}) {status}")
