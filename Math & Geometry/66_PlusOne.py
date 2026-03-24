@@ -27,3 +27,19 @@ class Solution:
             i += 1
 
         return digits[::-1]
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        ([1,2,3], [1,2,4]),
+        ([4,3,2,1], [4,3,2,2]),
+        ([9], [1,0]),
+        ([9,9,9], [1,0,0,0]),
+    ]
+
+    for digits, expected in test_cases:
+        result = solution.plusOne(digits[:])  # copy to preserve original
+        status = "✓" if result == expected else "✗"
+        print(f"digits = {digits} → result = {result} (Expected: {expected}) {status}")
