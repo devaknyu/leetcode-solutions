@@ -1,3 +1,70 @@
+"""
+LeetCode 50: Pow(x, n)
+https://leetcode.com/problems/powx-n/
+
+Approach:
+- We are given a number `x` and an integer `n`.
+- The goal is to compute:
+        x^n
+
+- A naive approach would multiply `x` n times → O(n)
+- This is too slow for large `n`.
+
+Key Observations:
+- We can use **Exponentiation by Squaring** to reduce complexity.
+
+Core Idea:
+- Break the problem into smaller subproblems:
+
+If n is even:
+    x^n = (x^(n/2))^2
+
+If n is odd:
+    x^n = x * (x^(n//2))^2
+
+This reduces the problem size by half each time.
+
+Example:
+
+x = 2, n = 10
+
+2^10 = (2^5)^2
+2^5  = 2 * (2^2)^2
+2^2  = (2^1)^2
+2^1  = 2
+
+Build back up:
+2^2 = 4
+2^5 = 2 * 4^2 = 32
+2^10 = 32^2 = 1024
+
+Handling Negative Powers:
+- If n < 0:
+    x^(-n) = 1 / x^n
+
+Technique: Divide & Conquer (Binary Exponentiation)
+
+Algorithm:
+1. Define recursive helper(x, n)
+2. Base cases:
+   - x == 0 → return 0
+   - n == 0 → return 1
+3. Recursively compute:
+       half = helper(x, n//2)
+4. Square result:
+       res = half * half
+5. If n is odd → multiply by x
+6. Handle negative exponent at the end
+
+Time Complexity:
+- Each step halves n
+- Time Complexity: O(log n)
+
+Space Complexity:
+- Recursion stack
+- Space Complexity: O(log n)
+"""
+
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         """
