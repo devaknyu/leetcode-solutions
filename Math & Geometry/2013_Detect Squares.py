@@ -32,3 +32,16 @@ class CountSquares:
             res += self.ptsCount[(x, py)] * self.ptsCount[(px, y)]
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    cs = CountSquares()
+
+    cs.add([3, 10])
+    cs.add([11, 2])
+    cs.add([3, 2])
+
+    print(cs.count([11, 10]))  # Expected: 1
+
+    cs.add([11, 2])  # duplicate point
+    print(cs.count([11, 10]))  # Expected: 2
