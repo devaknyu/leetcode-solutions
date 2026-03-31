@@ -19,3 +19,23 @@ class Solution:
         return res
 
 
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ["hello", "world"],
+        ["", ""],
+        ["a", "b", "c"],
+        ["#", "##", "###"],
+        [],
+    ]
+    
+    for strs in test_cases:
+        encoded = sol.encode(strs)
+        decoded = sol.decode(encoded)
+        print(f"Input:  {strs}")
+        print(f"Encoded: '{encoded}'")
+        print(f"Decoded: {decoded}")
+        print(f"Match: {strs == decoded}\n")
