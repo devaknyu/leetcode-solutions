@@ -1,3 +1,23 @@
+"""
+LeetCode 150: Evaluate Reverse Polish Notation
+https://leetcode.com/problems/evaluate-reverse-polish-notation/
+
+Approach:
+- Evaluate arithmetic expression in Reverse Polish Notation (postfix notation)
+- Use stack to store operands and perform operations
+- When operator encountered, pop two operands, apply operation, push result
+
+Technique: Stack-based Evaluation
+1. Traverse tokens from left to right
+2. If operand (number), push to stack
+3. If operator, pop two operands, apply operation, push result
+4. For division, ensure integer division truncates toward zero
+5. Note order: second popped operand is first in expression
+
+Time Complexity: O(n) - single pass through tokens
+Space Complexity: O(n) - stack stores operands
+"""
+
 from typing import List
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
