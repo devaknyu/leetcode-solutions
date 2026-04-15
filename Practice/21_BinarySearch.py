@@ -1,3 +1,23 @@
+"""
+LeetCode 704: Binary Search
+https://leetcode.com/problems/binary-search/
+
+Approach:
+- Search for target in sorted array using binary search
+- Narrow search range by half each iteration
+- Return index if found, -1 if not found
+
+Technique: Classic Binary Search
+1. Initialize left and right pointers
+2. Calculate middle index
+3. Compare middle element with target
+4. Adjust left or right pointer based on comparison
+5. Continue until target found or search space exhausted
+
+Time Complexity: O(log n) - halves search space each iteration
+Space Complexity: O(1) - only constant extra space
+"""
+
 from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
