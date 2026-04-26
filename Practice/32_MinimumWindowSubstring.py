@@ -1,3 +1,24 @@
+"""
+LeetCode 76: Minimum Window Substring
+https://leetcode.com/problems/minimum-window-substring/
+
+Approach:
+- Find minimum substring in s that contains all characters of t
+- Use sliding window with two hash maps for character counts
+- Expand window to include necessary characters, then contract to find minimum
+
+Technique: Sliding Window with Character Counting
+1. Create countT: frequency of each character in t
+2. Maintain window: frequency of characters in current window
+3. Track have: how many characters in t are satisfied in window
+4. need: number of unique characters in t
+5. Expand right pointer until have == need
+6. Contract left pointer to find minimum valid window
+
+Time Complexity: O(|s| + |t|)
+Space Complexity: O(|t|) for character frequency maps
+"""
+
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if t == "":
