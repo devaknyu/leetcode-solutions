@@ -24,3 +24,20 @@ class Solution:
             r += 1
             
         return output
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([1, 3, -1, -3, 5, 3, 6, 7], 3),  # → [3, 3, 5, 5, 6, 7]
+        ([1], 1),                         # → [1]
+        ([1, -1], 1),                     # → [1, -1]
+        ([7, 2, 4], 2),                   # → [7, 4]
+    ]
+    
+    for nums, k in test_cases:
+        print(f"nums={nums}, k={k}")
+        result = sol.maxSlidingWindow(nums, k)
+        print(f"Maximums: {result}\n")
