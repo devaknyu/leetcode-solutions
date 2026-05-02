@@ -33,3 +33,28 @@ class Solution:
 
         # Return the new head
         return dummy.next
+
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build a linked list
+    def build_list(values):
+        dummy = ListNode(0)
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    # Helper function to print a linked list
+    def print_list(head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        print(result)
+
+    # Example
+    head = build_list([1, 2, 3, 4, 5])
+    n = 2
+    head = Solution().removeNthFromEnd(head, n)
+    print_list(head)  # Expected: [1, 2, 3, 5]
