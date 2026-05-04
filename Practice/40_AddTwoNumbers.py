@@ -1,3 +1,24 @@
+"""
+LeetCode 2: Add Two Numbers
+https://leetcode.com/problems/add-two-numbers/
+
+Approach:
+- Add two numbers represented as linked lists (digits in reverse order)
+- Traverse both lists simultaneously while handling carry-over
+- Create new linked list for the result
+
+Technique: Linked List Traversal with Carry Handling
+1. Use dummy node to simplify list construction
+2. Process both lists while either has nodes or carry exists
+3. Calculate sum of current digits plus carry
+4. Update carry for next iteration
+5. Create new node with digit (sum % 10)
+
+Time Complexity: O(max(m,n)) where m,n are list lengths
+Space Complexity: O(max(m,n)) for the result list
+"""
+
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
