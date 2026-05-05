@@ -20,3 +20,19 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+
+    test_cases = [
+        ([1, 3, 4, 2, 2], 2),
+        ([3, 1, 3, 4, 2], 3),
+        ([1, 1], 1),
+        ([1, 4, 6, 3, 2, 5, 6], 6),
+    ]
+
+    for nums, expected in test_cases:
+        result = solution.findDuplicate(nums)
+        status = "✓" if result == expected else "✗"
+        print(f"nums = {nums} → duplicate = {result} (Expected: {expected}) {status}")
