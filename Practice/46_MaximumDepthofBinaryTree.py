@@ -23,3 +23,21 @@ class Solution:
             self.maxDepth(root.left),
             self.maxDepth(root.right)
         )
+
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build a binary tree
+    root = TreeNode(3,
+            TreeNode(9),
+            TreeNode(20, TreeNode(15), TreeNode(7))
+        )
+
+    # Tree structure:
+    #       3
+    #      / \
+    #     9  20
+    #        / \
+    #       15  7
+
+    depth = Solution().maxDepth(root)
+    print(depth)  # Expected: 3
