@@ -40,3 +40,23 @@ class Solution:
             res.append(lvl)
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    """
+        Tree:
+            3
+           / \
+          9  20
+             / \
+            15  7
+    """
+
+    root = TreeNode(3)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    root.right.left = TreeNode(15)
+    root.right.right = TreeNode(7)
+
+    print(Solution().levelOrder(root))
+    # Expected: [[3], [9, 20], [15, 7]]
