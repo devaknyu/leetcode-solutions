@@ -38,3 +38,23 @@ class Solution:
                 res.append(rightside.val)
 
         return res
+
+# Example usage
+if __name__ == "__main__":
+    """
+        Tree:
+            1
+           / \
+          2   3
+           \    \
+            5    4
+    """
+
+    root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.right = TreeNode(3)
+    root.left.right = TreeNode(5)
+    root.right.right = TreeNode(4)
+
+    print(Solution().rightSideView(root))
+    # Expected Output: [1, 3, 4]
