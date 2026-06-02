@@ -24,3 +24,21 @@ class Solution:
                     r = m - 1
                     
         return -1
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([4, 5, 6, 7, 0, 1, 2], 0),   # → 4
+        ([4, 5, 6, 7, 0, 1, 2], 3),   # → -1
+        ([1], 0),                      # → -1
+        ([1], 1),                      # → 0
+        ([1, 3], 3),                   # → 1
+    ]
+    
+    for nums, target in test_cases:
+        print(f"Array: {nums}, Target: {target}")
+        result = sol.search(nums, target)
+        print(f"Index: {result}\n")
