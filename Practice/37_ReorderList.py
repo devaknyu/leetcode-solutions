@@ -35,3 +35,27 @@ class Solution:
             second.next = temp1
 
             first, second = temp1, temp2
+
+# Example usage
+if __name__ == "__main__":
+    # Helper function to build linked list
+    def build_list(values):
+        dummy = ListNode(0)
+        curr = dummy
+        for v in values:
+            curr.next = ListNode(v)
+            curr = curr.next
+        return dummy.next
+
+    # Helper function to print linked list
+    def print_list(head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        print(result)
+
+    # Example
+    head = build_list([1, 2, 3, 4, 5])
+    Solution().reorderList(head)
+    print_list(head)  # Expected: [1, 5, 2, 4, 3]
