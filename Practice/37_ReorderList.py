@@ -1,3 +1,35 @@
+"""
+LeetCode 143: Reorder List
+https://leetcode.com/problems/reorder-list/
+
+Approach:
+- Given a singly linked list, reorder it as:
+  L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
+- The reordering must be done IN-PLACE (no new nodes).
+
+Key Observations:
+- The pattern alternates between the front and the back of the list.
+- Direct random access is not possible in a linked list.
+- The problem can be broken into three clean steps:
+  1. Find the middle of the linked list
+  2. Reverse the second half
+  3. Merge the two halves alternately
+
+Technique: Two Pointers + Linked List Reversal + Merge
+1. Use slow/fast pointers to locate the middle of the list
+2. Reverse the second half in-place
+3. Merge nodes from the first and second halves alternately
+
+Time Complexity:
+- Finding the middle: O(n)
+- Reversing the second half: O(n)
+- Merging the two halves: O(n)
+- Overall Time Complexity: O(n)
+
+Space Complexity:
+- O(1) extra space (in-place modification)
+"""
+
 from typing import Optional, ListNode
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
