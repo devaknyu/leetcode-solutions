@@ -1,3 +1,30 @@
+"""
+LeetCode 19: Remove Nth Node From End of List
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+Approach:
+- Given the head of a singly linked list, remove the nth node from the end.
+- The removal must be done in one pass if possible.
+
+Key Observations:
+- Removing the nth node from the end means we need to know its previous node.
+- A two-pointer approach allows us to maintain a fixed gap of n nodes.
+- A dummy node simplifies edge cases such as removing the head.
+
+Technique: Two Pointers (Fast & Slow) + Dummy Node
+1. Create a dummy node pointing to the head
+2. Move the right pointer n steps ahead
+3. Move both pointers together until the right pointer reaches the end
+4. The left pointer will be just before the node to remove
+5. Skip (delete) the target node
+
+Time Complexity:
+- O(n), where n is the length of the linked list
+
+Space Complexity:
+- O(1), constant extra space
+"""
+
 from typing import Optional
 class ListNode:
     def __init__(self, val=0, next=None):
