@@ -1,9 +1,9 @@
-from typing import List
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         seen = set()
         for i in nums:
+            if i in seen:
+                return True
             seen.add(i)
-        if len(seen) != len(nums):
-            return True
         return False
+
