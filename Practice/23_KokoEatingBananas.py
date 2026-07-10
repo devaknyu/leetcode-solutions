@@ -21,3 +21,20 @@ class Solution:
                 # Need faster speed
                 l = m + 1
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([3, 6, 7, 11], 8),   # → 4
+        ([30, 11, 23, 4, 20], 5),  # → 30
+        ([30, 11, 23, 4, 20], 6),  # → 23
+        ([1], 1),             # → 1
+    ]
+    
+    for piles, h in test_cases:
+        print(f"Piles: {piles}, Hours: {h}")
+        result = sol.minEatingSpeed(piles, h)
+        print(f"Min eating speed: {result}\n")
