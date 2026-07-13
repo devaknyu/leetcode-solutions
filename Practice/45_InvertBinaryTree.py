@@ -1,3 +1,38 @@
+"""
+LeetCode 226: Invert Binary Tree
+https://leetcode.com/problems/invert-binary-tree/
+
+Problem Description:
+- Given the root of a binary tree, invert the tree.
+- Inverting means swapping the left and right children of every node.
+
+Approach:
+- Use recursion to traverse the tree.
+- At each node:
+  1. Swap its left and right children
+  2. Recursively invert the left subtree
+  3. Recursively invert the right subtree
+
+Key Observations:
+- The operation must be applied to every node.
+- A recursive depth-first traversal naturally fits the problem.
+- The inversion of a tree is symmetric at every node.
+
+Technique: Depth-First Search (DFS) + Recursion
+1. Base case: if the current node is None, return
+2. Swap left and right child pointers
+3. Recursively apply the same operation on subtrees
+4. Return the root after inversion
+
+Time Complexity:
+- O(n), where n is the number of nodes in the tree
+
+Space Complexity:
+- O(h), where h is the height of the tree (recursion stack)
+  - Worst case: O(n) for a skewed tree
+  - Best case: O(log n) for a balanced tree
+"""
+
 from typing import Optional
 
 # Definition for a binary tree node.
