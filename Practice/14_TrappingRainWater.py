@@ -1,3 +1,27 @@
+"""
+LeetCode 42: Trapping Rain Water
+https://leetcode.com/problems/trapping-rain-water/
+
+Approach:
+- Calculate how much water can be trapped between elevation bars
+- Use two pointers moving from both ends towards center
+- Track maximum heights from left and right separately
+
+Technique: Two Pointers with Dynamic Max Tracking
+1. Use left and right pointers starting from both ends
+2. Track maximum height encountered from left (maxleft) and right (maxright)
+3. Water trapped at current position = min(maxleft, maxright) - current height
+4. Move pointer from side with smaller maximum height
+
+Why this works:
+- The water level at any point is determined by the minimum of the maximum heights on both sides
+- By moving the pointer with smaller max, we ensure we're always calculating correctly
+- This approach avoids the need for extra arrays
+
+Time Complexity: O(n) - single pass through array
+Space Complexity: O(1) - only constant extra space
+"""
+
 from typing import List
 class Solution:
     def trap(self, height: List[int]) -> int:
