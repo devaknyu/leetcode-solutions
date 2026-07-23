@@ -14,3 +14,10 @@ class Solution:
 
         return not stack
 
+
+# Example run for local testing
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isValid("()[]{}"))  # Expected True
+    print(sol.isValid("(]"))      # Expected False
+    
