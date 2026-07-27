@@ -40,6 +40,8 @@ class Solution:
         return len(stack)
 
 
+
+
 # Example usage
 if __name__ == "__main__":
     sol = Solution()
