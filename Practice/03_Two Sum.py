@@ -9,3 +9,5 @@ class Solution:
             else:
                 seen[num] = i
         return
+
+    
