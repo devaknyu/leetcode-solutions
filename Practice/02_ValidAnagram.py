@@ -2,15 +2,15 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        
-        seen_t = {}
-        seen_s = {}
+
+        countS, countT = {}, {}
 
         for i in range(len(s)):
-            seen_t[t[i]] = seen_t.get(t[i],0) + 1
-            seen_s[s[i]] = seen_s.get(s[i],0) + 1
-        
-        for c in seen_s:
-            if seen_s[c] != seen_t.get(c,0):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+
+        for c in countS:
+            if countS[c] != countT.get(c, 0):
                 return False
+        
         return True
