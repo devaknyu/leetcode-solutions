@@ -45,7 +45,6 @@ class Solution:
         return res
 
 
-
 # Example usage
 if __name__ == "__main__":
     sol = Solution()
