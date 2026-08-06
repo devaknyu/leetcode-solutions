@@ -1,3 +1,23 @@
+"""
+LeetCode 153: Find Minimum in Rotated Sorted Array
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
+Approach:
+- Find minimum element in rotated sorted array (no duplicates)
+- Use modified binary search to locate pivot point (minimum)
+- Compare middle element with left/right boundaries
+
+Technique: Modified Binary Search
+1. If left <= right, array segment is sorted, min is left element
+2. Compare middle with left boundary:
+   - If middle >= left: min is in right half
+   - Else: min is in left half (including middle)
+3. Track minimum encountered during search
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
 from typing import List
 class Solution:
     def findMin(self, nums: List[int]) -> int:
