@@ -28,3 +28,16 @@ class Solution:
             self.isSameTree(p.left, q.left) and
             self.isSameTree(p.right, q.right)
         )
+
+# Example usage
+if __name__ == "__main__":
+    # Identical trees
+    tree1 = TreeNode(1, TreeNode(2), TreeNode(3))
+    tree2 = TreeNode(1, TreeNode(2), TreeNode(3))
+
+    # Different trees
+    tree3 = TreeNode(1, TreeNode(2))
+    tree4 = TreeNode(1, None, TreeNode(2))
+
+    print(Solution().isSameTree(tree1, tree2))  # Expected: True
+    print(Solution().isSameTree(tree3, tree4))  # Expected: False
