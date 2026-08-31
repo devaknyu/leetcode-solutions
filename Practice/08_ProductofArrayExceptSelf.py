@@ -16,6 +16,8 @@ Time Complexity: O(n) - two passes through array
 Space Complexity: O(1) - output array doesn't count as extra space
 """
 
+
+
 from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
