@@ -68,6 +68,7 @@ class Solution:
 
             first, second = temp1, temp2
 
+
 # Example usage
 if __name__ == "__main__":
     # Helper function to build linked list
