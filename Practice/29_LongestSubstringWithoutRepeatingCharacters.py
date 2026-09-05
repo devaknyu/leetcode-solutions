@@ -1,3 +1,40 @@
+"""
+LeetCode 3: Longest Substring Without Repeating Characters
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+Approach:
+- We need to find the length of the longest substring without repeating characters.
+- This is a classic sliding window problem where we maintain a window of unique characters.
+
+Technique: Sliding Window with HashSet
+1. Use two pointers (left and right) to represent the current window boundaries.
+2. Use a set to track characters in the current window.
+3. Expand the window by moving the right pointer:
+   - If the character at right pointer is not in the set, add it and update max length.
+   - If the character is already in the set, shrink the window from the left until 
+     the duplicate character is removed.
+4. Keep track of the maximum window size encountered.
+
+Why sliding window works:
+- We maintain a window [l, r] that always contains unique characters.
+- When we encounter a duplicate, we shrink from left until the duplicate is removed.
+- This ensures we explore all possible valid substrings efficiently.
+
+Example:
+Input: "abcabcbb"
+Process:
+  Window: "a" → "ab" → "abc" → "bca" → "cab" → "abc" → "cb" → "b"
+  Longest: "abc" (length 3)
+
+Input: "pwwkew"
+Process:
+  Window: "p" → "pw" → "w" → "wk" → "wke" → "kew"
+  Longest: "wke" (length 3)
+
+Time Complexity: O(n) — each character is visited at most twice (by left and right pointers)
+Space Complexity: O(min(m, n)) — where m is character set size, n is string length
+"""
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l = 0
