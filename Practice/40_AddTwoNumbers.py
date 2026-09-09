@@ -51,7 +51,6 @@ class Solution(object):
 
         return dummy.next
 
-
 # Example usage
 if __name__ == "__main__":
     sol = Solution()
