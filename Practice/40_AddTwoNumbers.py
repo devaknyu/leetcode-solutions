@@ -18,6 +18,7 @@ Time Complexity: O(max(m,n)) where m,n are list lengths
 Space Complexity: O(max(m,n)) for the result list
 """
 
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
