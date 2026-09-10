@@ -1,3 +1,24 @@
+"""
+LeetCode 853: Car Fleet
+https://leetcode.com/problems/car-fleet/
+
+Approach:
+- Calculate time for each car to reach target: (target - position) / speed
+- Process cars from closest to target (highest position) to farthest
+- Use stack to track fleets based on arrival times
+- If car behind catches up (time <= previous car time), it becomes same fleet
+
+Technique: Sorting with Monotonic Stack
+1. Pair positions and speeds, sort by position descending (closest to target first)
+2. Calculate time to reach target for each car
+3. If current car's time <= previous car's time, they become same fleet (pop from stack)
+4. Otherwise, current car leads new fleet (push to stack)
+5. Stack size = number of fleets
+
+Time Complexity: O(n log n) - sorting dominates
+Space Complexity: O(n) - for stack storage
+"""
+
 from typing import List
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
