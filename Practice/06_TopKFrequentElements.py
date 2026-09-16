@@ -19,3 +19,17 @@ class Solution:
                 res.append(num)
                 if len(res) == k:
                     return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        ([1,1,1,2,2,3], 2),     # → [1,2]
+        ([1], 1),                # → [1]
+        ([4,1,-1,2,-1,2,3], 2), # → [-1,2]
+    ]
+    
+    for nums, k in test_cases:
+        print(f"nums={nums}, k={k} → {sol.topKFrequent(nums, k)}")
