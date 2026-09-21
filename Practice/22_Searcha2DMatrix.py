@@ -1,3 +1,21 @@
+"""
+LeetCode 74: Search a 2D Matrix
+https://leetcode.com/problems/search-a-2d-matrix/
+
+Approach:
+- Search for target in m x n matrix where:
+  1. Each row is sorted left to right
+  2. First element of each row > last element of previous row
+- Use binary search to find correct row, then binary search within row
+
+Technique: Two-Step Binary Search
+1. Binary search to find correct row by comparing target with first/last element
+2. Binary search within selected row to find target
+
+Time Complexity: O(log m + log n) = O(log(m*n))
+Space Complexity: O(1) - only constant extra space
+"""
+
 from typing import List
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
