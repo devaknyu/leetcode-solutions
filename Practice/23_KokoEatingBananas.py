@@ -43,6 +43,7 @@ class Solution:
                 l = m + 1
         return res
 
+
 # Example usage
 if __name__ == "__main__":
     sol = Solution()
