@@ -1,24 +1,3 @@
-"""
-LeetCode 4: Median of Two Sorted Arrays
-https://leetcode.com/problems/median-of-two-sorted-arrays/
-
-Approach:
-- Find median of two sorted arrays in O(log(min(m,n))) time
-- Use binary search on smaller array to find correct partition
-- Ensure elements on left side <= elements on right side
-- Handle edge cases with infinity bounds
-
-Technique: Binary Search with Partitioning
-1. Ensure A is smaller array for binary search efficiency
-2. Partition both arrays such that left halves contain (m+n+1)//2 elements
-3. Check if partition is correct: Aleft <= Bright and Bleft <= Aright
-4. Adjust binary search based on comparison
-5. Calculate median based on total length (odd/even)
-
-Time Complexity: O(log(min(m,n)))
-Space Complexity: O(1)
-"""
-
 from typing import List
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
@@ -56,21 +35,3 @@ class Solution:
             # A_right too small, move right in A
             else:
                 l = i + 1
-
-# Example usage
-if __name__ == "__main__":
-    sol = Solution()
-    
-    # Test cases
-    test_cases = [
-        ([1, 3], [2]),         # → 2.0
-        ([1, 2], [3, 4]),      # → 2.5
-        ([0, 0], [0, 0]),      # → 0.0
-        ([], [1]),             # → 1.0
-        ([2], []),             # → 2.0
-    ]
-    
-    for nums1, nums2 in test_cases:
-        print(f"nums1={nums1}, nums2={nums2}")
-        result = sol.findMedianSortedArrays(nums1, nums2)
-        print(f"Median: {result}\n")     
