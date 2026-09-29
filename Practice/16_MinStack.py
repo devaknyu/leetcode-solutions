@@ -41,6 +41,7 @@ class MinStack:
     def getMin(self) -> int:
         return self.minstack[-1]
 
+
 # Example usage
 if __name__ == "__main__":
     minStack = MinStack()
