@@ -11,6 +11,7 @@ Time Complexity: O(n)
 Space Complexity: O(1) — since the alphabet is fixed (only 26 lowercase letters)
 """
 
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
