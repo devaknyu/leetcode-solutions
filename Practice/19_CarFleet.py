@@ -17,3 +17,5 @@ class Solution:
                 stack.pop()
                 
         return len(stack)
+
+    
