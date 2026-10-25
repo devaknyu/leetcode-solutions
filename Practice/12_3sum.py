@@ -1,3 +1,22 @@
+"""
+LeetCode 15: 3Sum
+https://leetcode.com/problems/3sum/
+
+Approach:
+- Find all unique triplets that sum to zero
+- Sort array first to enable two-pointer technique
+- Skip duplicates to avoid duplicate triplets
+
+Technique: Sorting + Two Pointers
+1. Sort the array to handle duplicates and enable two-pointer
+2. For each element, use two pointers to find pairs that sum to -element
+3. Skip duplicate elements to avoid duplicate triplets
+4. When triplet found, move pointers and skip duplicates
+
+Time Complexity: O(n²) - sorting O(n log n) + nested loops O(n²)
+Space Complexity: O(1) or O(n) depending on sort implementation
+"""
+
 from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
