@@ -1,3 +1,20 @@
+"""
+LeetCode 141: Linked List Cycle
+https://leetcode.com/problems/linked-list-cycle/
+
+Approach 1: Floyd's Tortoise and Hare (Optimal)
+- Two pointers: slow moves 1 step, fast moves 2 steps.
+- If they meet, cycle exists.
+- If fast reaches None, no cycle.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Approach 2: Hash Set (Alternative, but uses extra space)
+- Track visited nodes in a set.
+- If a node is revisited, cycle exists.
+"""
+
 from typing import Optional
 
 class ListNode:
