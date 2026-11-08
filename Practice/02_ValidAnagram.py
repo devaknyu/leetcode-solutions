@@ -14,3 +14,9 @@ class Solution:
                 return False
         
         return True
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isAnagram("anagram", "nagaram"))  # Expected output: True
+    print(sol.isAnagram("rat", "car"))          # Expected output: False
