@@ -16,3 +16,19 @@ class Solution:
             postfix *= nums[i]
             
         return res
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        [1,2,3,4],    # → [24,12,8,6]
+        [-1,1,0,-3,3], # → [0,0,9,0,0]
+        [2,3,5],       # → [15,10,6]
+    ]
+    
+    for nums in test_cases:
+        print(f"Input:  {nums}")
+        result = sol.productExceptSelf(nums)
+        print(f"Output: {result}\n")
