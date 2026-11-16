@@ -1,3 +1,27 @@
+"""
+LeetCode 167: Two Sum II - Input Array Is Sorted
+https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+
+Approach:
+- Find two numbers that add up to target in sorted array
+- Return 1-based indices of the two numbers
+- Use two pointers since array is sorted
+
+Space Complexity Analysis:
+- Yes, this solution has O(1) space complexity
+- Only using fixed variables (l, r) - no extra data structures
+- Input array is already sorted, no additional storage needed
+
+Technique: Two Pointers
+1. Left pointer at start, right pointer at end
+2. If sum equals target, return indices (1-based)
+3. If sum > target, move right pointer left
+4. If sum < target, move left pointer right
+
+Time Complexity: O(n) - single pass through array
+Space Complexity: O(1) - only constant extra space used
+"""
+
 from typing import List
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
