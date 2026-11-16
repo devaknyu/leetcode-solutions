@@ -61,5 +61,6 @@ if __name__ == "__main__":
     sol = Solution()
     print(sol.isPalindrome("A man, a plan, a canal: Panama"))  # Expected output: True
     print(sol.isPalindrome("race a car"))                      # Expected output: False
-    print(sol.isPalindrome(" "))                               # Expected output: True
+    print(sol.isPalindrome(" "))    
+                               # Expected output: True
     
