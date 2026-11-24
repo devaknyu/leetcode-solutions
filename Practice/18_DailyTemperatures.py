@@ -18,7 +18,6 @@ Time Complexity: O(n) - each temperature pushed and popped once
 Space Complexity: O(n) - stack storage
 """
 
-
 from typing import List
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
