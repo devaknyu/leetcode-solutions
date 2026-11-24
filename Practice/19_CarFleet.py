@@ -17,3 +17,19 @@ class Solution:
                 stack.pop()
                 
         return len(stack)
+
+# Example usage
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Test cases
+    test_cases = [
+        (12, [10, 8, 0, 5, 3], [2, 4, 1, 1, 3]),  # → 3
+        (10, [3], [3]),                           # → 1
+        (100, [0, 2, 4], [4, 2, 1]),              # → 1
+    ]
+    
+    for target, position, speed in test_cases:
+        print(f"Target: {target}, Position: {position}, Speed: {speed}")
+        result = sol.carFleet(target, position, speed)
+        print(f"Number of fleets: {result}\n")
