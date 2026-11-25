@@ -1,3 +1,24 @@
+"""
+LeetCode 84: Largest Rectangle in Histogram
+https://leetcode.com/problems/largest-rectangle-in-histogram/
+
+Approach:
+- Find maximum area rectangle formed by histogram bars
+- Use monotonic increasing stack to track bar indices and heights
+- When smaller bar encountered, calculate areas for previous taller bars
+- Process remaining bars at the end
+
+Technique: Monotonic Stack
+1. Stack stores [starting_index, height] pairs
+2. Maintain stack in increasing height order
+3. When smaller height encountered, pop taller bars and calculate their areas
+4. Update starting index for current bar based on popped bars
+5. Process remaining bars after main loop
+
+Time Complexity: O(n) - each bar pushed and popped once
+Space Complexity: O(n) - stack storage
+"""
+
 from typing import List
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
